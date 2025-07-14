@@ -1,0 +1,407 @@
+# Configuración Global - Estudio GD Línea Sur
+
+project:
+  name: "Estudio Generación Distribuida - Línea Sur Río Negro"
+  version: "1.0.0"
+  author: "Claude AI Assistant"
+  start_date: "2025-07-06"
+
+# Paths configuration
+paths:
+  data:
+    raw: "data/raw"
+    processed: "data/processed"
+    interim: "data/interim"
+    external: "data/external"
+  notebooks: "notebooks"
+  src: "src"
+  reports: "reports"
+  models: "models"
+  logs: "logs"
+
+# System parameters
+system:
+  # Base values for per-unit calculations
+  base_power_mva: 100  # MVA
+  nominal_voltages_kv:
+    ehv: 132    # Extra High Voltage
+    hv: 33      # High Voltage  
+    mv: 13.2    # Medium Voltage
+  frequency: 50  # Hz
+  
+  # System totals
+  total_load_mw: 3.80
+  total_load_mvar: 1.05
+  system_power_factor: 0.964
+  total_length_km: 270
+  
+  # Stations with complete data
+  stations:
+    - name: "Pilcaniyeu"
+      id: "ET4PI"
+      type: "source"
+      coordinates: [-41.12, -70.90]
+      distance_km: 0
+      bus_number: null
+      voltage_levels_kv: [132, 33]
+      has_regulation: true
+      regulation_type: "RBC/OLTC"
+      transformer:
+        power_mva: 20  # Estimated
+        impedance_percent: 11
+        connection: "YNyn0"
+      
+    - name: "Comallo"
+      id: "ET2"
+      type: "load"
+      coordinates: [-41.06, -70.27]
+      distance_km: 70
+      bus_number: 1780
+      voltage_kv: 13.2
+      load_mw: 0.30
+      load_mvar: 0.10
+      power_factor: 0.949
+      population: 1041
+      transformer:
+        power_mva: 3  # Estimated
+        impedance_percent: 6.5
+        connection: "Dyn11"
+      
+    - name: "Onelli"
+      id: "ET3"
+      type: "load"
+      coordinates: [-41.14, -69.89]
+      distance_km: 120
+      bus_number: 1782
+      voltage_kv: 13.2
+      load_mw: 0.10
+      load_mvar: 0.04
+      power_factor: 0.928
+      notes: "Supplies INVAP and Pilcaniyeu Pueblo"
+      transformer:
+        power_mva: 1.5  # Estimated
+        impedance_percent: 6.5
+        connection: "Dyn11"
+      
+    - name: "Jacobacci"
+      id: "ET2IJ"
+      type: "load"
+      coordinates: [-41.329, -69.550]
+      distance_km: 150
+      bus_number: 1785
+      voltage_kv: 13.2
+      load_mw: 1.45
+      load_mvar: 0.60
+      power_factor: 0.924
+      population: 6261
+      criticality: "high"
+      has_regulation: true
+      regulation_type: "series_33kv"
+      feeders: ["Norte", "Sur"]
+      transformer:
+        power_mva: 6  # Estimated
+        impedance_percent: 6.5
+        connection: "Dyn11"
+      
+    - name: "Maquinchao"
+      id: "ET5"
+      type: "load"
+      coordinates: [-41.25, -68.73]
+      distance_km: 210
+      bus_number: 1788
+      voltage_kv: 13.2
+      load_mw: 0.50
+      load_mvar: 0.10
+      power_factor: 0.980
+      population: 2334
+      transformer:
+        power_mva: 3  # Estimated
+        impedance_percent: 6.5
+        connection: "Dyn11"
+      
+    - name: "Aguada de Guerra"
+      id: "ET6"
+      type: "switching"
+      coordinates: [-41.00, -68.40]
+      distance_km: 240
+      bus_number: 1790
+      voltage_kv: 33
+      load_mw: 0.05
+      load_mvar: 0.01
+      power_factor: 0.980
+      
+    - name: "Los Menucos"
+      id: "ET2LM"
+      type: "load_generation"
+      coordinates: [-40.843, -68.086]
+      distance_km: 270
+      bus_number: 1792
+      voltage_kv: 13.2
+      load_mw: 1.40
+      load_mvar: 0.20
+      power_factor: 0.990
+      population: 5187
+      criticality: "high"
+      has_regulation: true
+      regulation_type: "series_13kv"
+      has_generation: true
+      generation_mw: 3.0
+      transformer:
+        power_mva: 6  # Estimated
+        impedance_percent: 6.5
+        connection: "Dyn11"
+  
+  # Line sections
+  line_sections:
+    - from: "Pilcaniyeu"
+      to: "Comallo"
+      length_km: 70
+      conductor: "120 Al/Al"
+      r_ohm_per_km: 0.245
+      x_ohm_per_km: 0.410
+      b_microsiemens_per_km: 2.75
+      thermal_limit_mva: 16
+      
+    - from: "Comallo"
+      to: "Onelli"
+      length_km: 50
+      conductor: "120 Al/Al"
+      r_ohm_per_km: 0.245
+      x_ohm_per_km: 0.410
+      b_microsiemens_per_km: 2.75
+      thermal_limit_mva: 16
+      
+    - from: "Onelli"
+      to: "Jacobacci"
+      length_km: 30
+      conductor: "120 Al/Al"
+      r_ohm_per_km: 0.245
+      x_ohm_per_km: 0.410
+      b_microsiemens_per_km: 2.75
+      thermal_limit_mva: 16
+      
+    - from: "Jacobacci"
+      to: "Maquinchao"
+      length_km: 60
+      conductor: "70 Al/Al"
+      r_ohm_per_km: 0.420
+      x_ohm_per_km: 0.425
+      b_microsiemens_per_km: 2.65
+      thermal_limit_mva: 11
+      
+    - from: "Maquinchao"
+      to: "Aguada de Guerra"
+      length_km: 30
+      conductor: "70 Al/Al"
+      r_ohm_per_km: 0.420
+      x_ohm_per_km: 0.425
+      b_microsiemens_per_km: 2.65
+      thermal_limit_mva: 11
+      
+    - from: "Aguada de Guerra"
+      to: "Los Menucos"
+      length_km: 30
+      conductor: "70 Al/Al"
+      r_ohm_per_km: 0.420
+      x_ohm_per_km: 0.425
+      b_microsiemens_per_km: 2.65
+      thermal_limit_mva: 11
+  
+  # Voltage regulators
+  voltage_regulators:
+    - location: "Pilcaniyeu"
+      type: "OLTC"
+      voltage: "132/33 kV"
+      range_percent: 10
+      steps: 17
+      
+    - location: "Jacobacci"
+      type: "Series"
+      voltage: "33/33 kV"
+      range_percent: 10
+      steps: 33
+      
+    - location: "Los Menucos"
+      type: "Series"
+      voltage: "13.2/13.2 kV"
+      range_percent: 10
+      steps: 33
+
+# Data processing parameters
+data_processing:
+  sampling_interval: 15  # minutes
+  aggregation_periods:
+    - "15min"
+    - "1H"
+    - "1D"
+    - "1M"
+  
+  quality_thresholds:
+    voltage_min_pu: 0.90
+    voltage_max_pu: 1.10
+    power_factor_min: 0.85
+    data_completeness_min: 0.80
+
+# Analysis parameters
+analysis:
+  voltage_limits:
+    normal_min_pu: 0.95
+    normal_max_pu: 1.05
+    emergency_min_pu: 0.90
+    emergency_max_pu: 1.10
+    
+  # Measured voltage violations
+  measured_violations:
+    pilcaniyeu_min_pu: 0.592
+    jacobacci_min_pu: 0.230
+    maquinchao_min_pu: 0.235
+    menucos_min_pu: 0.225
+    max_voltage_drop_percent: 41
+  
+  # System losses
+  losses:
+    total_estimated_mw: 1.86
+    percentage_of_generation: 32.9
+    specific_losses_kw_per_km: 6.9
+  
+  clustering:
+    n_clusters_range: [2, 8]
+    methods: ["kmeans", "hierarchical", "dbscan"]
+    
+  time_series:
+    seasonality: ["daily", "weekly", "monthly"]
+    forecast_horizon_days: 30
+    
+  # Critical points identification
+  critical_nodes: ["Jacobacci", "Los Menucos"]
+  priority_gd_locations:
+    high: ["Jacobacci", "Los Menucos"]
+    medium: ["Maquinchao"]
+    low: ["Onelli", "Comallo"]
+
+# Machine Learning parameters
+ml:
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+  
+  models:
+    demand_forecast:
+      type: "random_forest"
+      n_estimators: 100
+      max_depth: 10
+      
+    voltage_prediction:
+      type: "xgboost"
+      n_estimators: 200
+      learning_rate: 0.1
+      
+    time_series:
+      type: "lstm"
+      sequence_length: 96  # 24 hours at 15 min intervals
+      hidden_units: 64
+
+# Distributed Generation parameters
+dg:
+  technologies:
+    gas:
+      capex_usd_per_kw: 800
+      opex_usd_per_kw_year: 50
+      efficiency: 0.40
+      availability: 0.95
+      lifetime_years: 20
+      
+    solar:
+      capex_usd_per_kw: 1000
+      opex_usd_per_kw_year: 20
+      capacity_factor: 0.25
+      degradation_rate_year: 0.005
+      lifetime_years: 25
+      
+    battery:
+      capex_usd_per_kwh: 300
+      opex_usd_per_kwh_year: 10
+      round_trip_efficiency: 0.90
+      lifetime_cycles: 5000
+  
+  # Los Menucos reference
+  los_menucos_existing:
+    capacity_mw: 3.0
+    units: 2
+    unit_capacity_mw: 1.5
+    fuel: "natural_gas"
+    fuel_cost_usd_per_m3: 0.11137
+    specific_consumption_m3_per_kwh: 0.282
+
+# Economic parameters
+economics:
+  discount_rate: 0.12
+  inflation_rate: 0.03
+  exchange_rate_ars_usd: 1000  # Update as needed
+  energy_cost_usd_per_mwh: 50
+  loss_cost_usd_per_mwh: 70
+  voll_usd_per_mwh: 500  # Value of Lost Load
+  
+  penalties:
+    voltage_violation_usd_per_hour: 100
+    power_factor_penalty_usd_per_mvar: 10
+
+# Optimization parameters
+optimization:
+  objectives:
+    - "minimize_cost"
+    - "maximize_voltage_improvement"
+    - "minimize_losses"
+  
+  constraints:
+    max_dg_penetration: 0.5  # 50% of peak load
+    min_dg_size_mw: 0.1
+    max_dg_size_mw: 5.0
+    
+  algorithms:
+    genetic:
+      population_size: 100
+      generations: 200
+      crossover_rate: 0.8
+      mutation_rate: 0.1
+      
+    pso:
+      n_particles: 50
+      iterations: 100
+      w: 0.7  # inertia weight
+      c1: 1.5  # cognitive parameter
+      c2: 1.5  # social parameter
+
+# Reporting parameters
+reporting:
+  formats: ["html", "pdf", "xlsx"]
+  
+  figures:
+    dpi: 300
+    figure_size: [10, 6]
+    style: "seaborn-v0_8-whitegrid"
+    
+  tables:
+    float_format: ".2f"
+    index: false
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/gd_linea_sur.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# Dashboard configuration
+dashboard:
+  port: 8050
+  debug: true
+  host: "0.0.0.0"
+  
+  update_interval_seconds: 300
+  
+  theme:
+    primary_color: "#1f77b4"
+    secondary_color: "#ff7f0e"
+    background_color: "#f8f9fa"

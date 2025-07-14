@@ -1,0 +1,56 @@
+LÍNEA SUR - COMPREHENSIVE ANALYSIS RESULTS
+Date: 2025-07-06 14:27
+============================================================
+
+STATION SUMMARY
+
+Pilcaniyeu_33:
+  voltage_level: 33
+  p_avg: 2.78969305
+  q_avg: 0.1013313
+  v_min: 33.735318666666664
+  v_avg: 34.70455452666667
+  pf_avg: 0.9933145369710461
+  v_min_pu: 1.0222823838383839
+  hours_below_095: 0.0
+
+Jacobacci:
+  voltage_level: 13.2
+  p_avg: 0.50389021
+  q_avg: 0.16817906999999999
+  v_min: 0.0
+  v_avg: 13.3516553694
+  pf_avg: 0.8975857339221472
+  v_min_pu: 0.0
+  hours_below_095: 1.5
+
+Maquinchao:
+  voltage_level: 13.2
+  p_avg: 0.35193669
+  q_avg: 0.11858863
+  v_min: 13.2953516
+  v_avg: 13.8107504608
+  pf_avg: 0.9412588389068851
+  v_min_pu: 1.0072236060606061
+  hours_below_095: 0.0
+
+Los_Menucos:
+  voltage_level: 13.2
+  p_avg: 0.93350252
+  q_avg: 0.21490927
+  v_min: 12.630436800000002
+  v_avg: 13.425388543466667
+  pf_avg: 0.9664569219812176
+  v_min_pu: 0.9568512727272729
+  hours_below_095: 0.0
+
+
+RECOMMENDATIONS FOR DG IMPLEMENTATION
+
+1. Jacobacci
+   Priority Score: 6/8
+   Recommended DG: 0.2 - 0.3 MW
+
+2. Maquinchao
+   Priority Score: 3/8
+   Recommended DG: 0.1 - 0.2 MW

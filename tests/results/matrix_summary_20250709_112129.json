@@ -1,0 +1,42 @@
+{
+  "test_date": "20250709_112129",
+  "total_configs": 1152,
+  "successful": 1008,
+  "failed": 0,
+  "duration_seconds": 6.354358,
+  "stations_tested": [
+    "MAQUINCHAO",
+    "LOS MENUCOS",
+    "JACOBACCI"
+  ],
+  "solar_sizes_mw": [
+    0.5,
+    1.0,
+    2.0,
+    3.0
+  ],
+  "bess_powers_mw": [
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "bess_durations_h": [
+    2,
+    4,
+    6
+  ],
+  "strategies": [
+    "cap_shaving",
+    "flat_day",
+    "night_shift",
+    "ramp_limit"
+  ],
+  "technologies": [
+    "SAT Bifacial",
+    "Fixed Monofacial"
+  ],
+  "avg_efficiency": 0.9922962325149233,
+  "valid_rate": 1.0,
+  "errors": []
+}

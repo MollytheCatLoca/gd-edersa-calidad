@@ -1,0 +1,361 @@
+{
+  "timestamp": "2025-07-09T15:24:30.306443",
+  "system_info": {
+    "python_version": "3.12.4 (v3.12.4:8e8a4baf65, Jun  6 2024, 17:33:18) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy_version": "2.3.1",
+    "pandas_version": "2.3.0"
+  },
+  "profiles": {
+    "daily": {
+      "length": 24,
+      "mean": 1.0,
+      "max": 2.0,
+      "min": 0.0
+    },
+    "weekly": {
+      "length": 168,
+      "mean": 1.0,
+      "max": 2.0,
+      "min": 0.0
+    },
+    "monthly": {
+      "length": 720,
+      "mean": 1.0,
+      "max": 2.0,
+      "min": 0.0
+    },
+    "annual": {
+      "length": 8760,
+      "mean": 0.7488023250617432,
+      "max": 2.999747818606481,
+      "min": 0.0
+    }
+  },
+  "strategies": {
+    "daily": {
+      "time_shift_aggressive": {
+        "success": true,
+        "execution_time": 0.0024309158325195312,
+        "memory_current": 0.01143646240234375,
+        "memory_peak": 0.013927459716796875,
+        "profile_length": 24,
+        "total_cycles": 1.001924612967537,
+        "energy_efficiency": 0.9800858140149377
+      },
+      "solar_smoothing": {
+        "success": true,
+        "execution_time": 0.0015230178833007812,
+        "memory_current": 0.010535240173339844,
+        "memory_peak": 0.01305389404296875,
+        "profile_length": 24,
+        "total_cycles": 1.2070806346106906,
+        "energy_efficiency": -0.054679026279391495
+      },
+      "cycling_demo": {
+        "success": true,
+        "execution_time": 0.0012612342834472656,
+        "memory_current": 0.009774208068847656,
+        "memory_peak": 0.012211799621582031,
+        "profile_length": 24,
+        "total_cycles": 1.5945882352941176,
+        "energy_efficiency": 1.0964
+      },
+      "frequency_regulation": {
+        "success": true,
+        "execution_time": 0.001560211181640625,
+        "memory_current": 0.010231971740722656,
+        "memory_peak": 0.012719154357910156,
+        "profile_length": 24,
+        "total_cycles": 0.19073257354894488,
+        "energy_efficiency": 0.9974020346723481
+      },
+      "arbitrage_aggressive": {
+        "success": true,
+        "execution_time": 0.00109100341796875,
+        "memory_current": 0.008289337158203125,
+        "memory_peak": 0.01081085205078125,
+        "profile_length": 24,
+        "total_cycles": 0.9597058823529412,
+        "energy_efficiency": 0.9561666666666667
+      }
+    },
+    "weekly": {
+      "time_shift_aggressive": {
+        "success": true,
+        "execution_time": 0.003002166748046875,
+        "memory_current": 0.014334678649902344,
+        "memory_peak": 0.022330284118652344,
+        "profile_length": 168,
+        "total_cycles": 7.013472290772761,
+        "energy_efficiency": 0.9800858140149378
+      },
+      "solar_smoothing": {
+        "success": true,
+        "execution_time": 0.004962921142578125,
+        "memory_current": 0.014255523681640625,
+        "memory_peak": 0.022251129150390625,
+        "profile_length": 168,
+        "total_cycles": 7.767856941530155,
+        "energy_efficiency": 0.1418401523523207
+      },
+      "cycling_demo": {
+        "success": true,
+        "execution_time": 0.0051059722900390625,
+        "memory_current": 0.014035224914550781,
+        "memory_peak": 0.021988868713378906,
+        "profile_length": 168,
+        "total_cycles": 12.313243102758124,
+        "energy_efficiency": 0.9671863464137522
+      },
+      "frequency_regulation": {
+        "success": true,
+        "execution_time": 0.006918191909790039,
+        "memory_current": 0.014052391052246094,
+        "memory_peak": 0.02200603485107422,
+        "profile_length": 168,
+        "total_cycles": 1.3997688752256388,
+        "energy_efficiency": 0.9915754500801081
+      },
+      "arbitrage_aggressive": {
+        "success": true,
+        "execution_time": 0.0032241344451904297,
+        "memory_current": 0.014210700988769531,
+        "memory_peak": 0.022141456604003906,
+        "profile_length": 168,
+        "total_cycles": 6.455281828777562,
+        "energy_efficiency": 0.9774295662418162
+      }
+    },
+    "monthly": {
+      "time_shift_aggressive": {
+        "success": true,
+        "execution_time": 0.009071111679077148,
+        "memory_current": 0.039485931396484375,
+        "memory_peak": 0.05731201171875,
+        "profile_length": 720,
+        "total_cycles": 30.057738389026095,
+        "energy_efficiency": 0.9800858140149378
+      },
+      "solar_smoothing": {
+        "success": true,
+        "execution_time": 0.017483949661254883,
+        "memory_current": 0.03957939147949219,
+        "memory_peak": 0.05744743347167969,
+        "profile_length": 720,
+        "total_cycles": 32.934872660956465,
+        "energy_efficiency": 0.16900796084859981
+      },
+      "cycling_demo": {
+        "success": true,
+        "execution_time": 0.01787400245666504,
+        "memory_current": 0.039231300354003906,
+        "memory_peak": 0.05705738067626953,
+        "profile_length": 720,
+        "total_cycles": 54.145982180131675,
+        "energy_efficiency": 0.9647396634024896
+      },
+      "frequency_regulation": {
+        "success": true,
+        "execution_time": 0.022466182708740234,
+        "memory_current": 0.03945159912109375,
+        "memory_peak": 0.057277679443359375,
+        "profile_length": 720,
+        "total_cycles": 6.78534773343618,
+        "energy_efficiency": 0.9931366945523354
+      },
+      "arbitrage_aggressive": {
+        "success": true,
+        "execution_time": 0.00969076156616211,
+        "memory_current": 0.03935813903808594,
+        "memory_peak": 0.05716133117675781,
+        "profile_length": 720,
+        "total_cycles": 27.521422218922407,
+        "energy_efficiency": 0.9801509136425776
+      }
+    },
+    "annual": {
+      "time_shift_aggressive": {
+        "success": true,
+        "execution_time": 0.09067201614379883,
+        "memory_current": 0.40744590759277344,
+        "memory_peak": 0.5685110092163086,
+        "profile_length": 8760,
+        "total_cycles": 319.99561543124446,
+        "energy_efficiency": 0.9773692689860888
+      },
+      "solar_smoothing": {
+        "success": true,
+        "execution_time": 0.19184303283691406,
+        "memory_current": 0.4076404571533203,
+        "memory_peak": 0.5687046051025391,
+        "profile_length": 8760,
+        "total_cycles": 309.76457019732004,
+        "energy_efficiency": 0.17563037415467414
+      },
+      "cycling_demo": {
+        "success": true,
+        "execution_time": 0.1817488670349121,
+        "memory_current": 0.4072694778442383,
+        "memory_peak": 0.5682497024536133,
+        "profile_length": 8760,
+        "total_cycles": 476.0605228074301,
+        "energy_efficiency": 0.9653575889379894
+      },
+      "frequency_regulation": {
+        "success": true,
+        "execution_time": 0.2608029842376709,
+        "memory_current": 0.4074277877807617,
+        "memory_peak": 0.5684499740600586,
+        "profile_length": 8760,
+        "total_cycles": 87.93069327182292,
+        "energy_efficiency": 0.9932016778045024
+      },
+      "arbitrage_aggressive": {
+        "success": true,
+        "execution_time": 0.10592508316040039,
+        "memory_current": 0.40740299224853516,
+        "memory_peak": 0.5684022903442383,
+        "profile_length": 8760,
+        "total_cycles": 334.35433659712373,
+        "energy_efficiency": 0.9745073916593693
+      }
+    }
+  },
+  "technologies": {
+    "daily": {
+      "standard": {
+        "success": true,
+        "execution_time": 0.0009658336639404297,
+        "memory_current": 0.00775909423828125,
+        "memory_peak": 0.010356903076171875,
+        "energy_efficiency": 0.9785053514719705,
+        "roundtrip_efficiency": 0.9006009999999999
+      },
+      "modern_lfp": {
+        "success": true,
+        "execution_time": 0.000988006591796875,
+        "memory_current": 0.0076389312744140625,
+        "memory_peak": 0.010160446166992188,
+        "energy_efficiency": 0.9800858140149377,
+        "roundtrip_efficiency": 0.9292959999999999
+      },
+      "premium": {
+        "success": true,
+        "execution_time": 0.001032114028930664,
+        "memory_current": 0.007733345031738281,
+        "memory_peak": 0.010224342346191406,
+        "energy_efficiency": 0.9858985977564103,
+        "roundtrip_efficiency": 0.9506249999999999
+      }
+    },
+    "weekly": {
+      "standard": {
+        "success": true,
+        "execution_time": 0.002599954605102539,
+        "memory_current": 0.013991355895996094,
+        "memory_peak": 0.021994590759277344,
+        "energy_efficiency": 0.9785053514719705,
+        "roundtrip_efficiency": 0.9006009999999999
+      },
+      "modern_lfp": {
+        "success": true,
+        "execution_time": 0.0026330947875976562,
+        "memory_current": 0.014159202575683594,
+        "memory_peak": 0.02212047576904297,
+        "energy_efficiency": 0.9800858140149378,
+        "roundtrip_efficiency": 0.9292959999999999
+      },
+      "premium": {
+        "success": true,
+        "execution_time": 0.002769947052001953,
+        "memory_current": 0.013924598693847656,
+        "memory_peak": 0.021927833557128906,
+        "energy_efficiency": 0.9858985977564103,
+        "roundtrip_efficiency": 0.9506249999999999
+      }
+    },
+    "monthly": {
+      "standard": {
+        "success": true,
+        "execution_time": 0.007853031158447266,
+        "memory_current": 0.039313316345214844,
+        "memory_peak": 0.057188987731933594,
+        "energy_efficiency": 0.9785053514719705,
+        "roundtrip_efficiency": 0.9006009999999999
+      },
+      "modern_lfp": {
+        "success": true,
+        "execution_time": 0.008313179016113281,
+        "memory_current": 0.039269447326660156,
+        "memory_peak": 0.05710315704345703,
+        "energy_efficiency": 0.9800858140149378,
+        "roundtrip_efficiency": 0.9292959999999999
+      },
+      "premium": {
+        "success": true,
+        "execution_time": 0.008790016174316406,
+        "memory_current": 0.03928947448730469,
+        "memory_peak": 0.05712318420410156,
+        "energy_efficiency": 0.9858985977564103,
+        "roundtrip_efficiency": 0.9506249999999999
+      }
+    }
+  },
+  "optimization": {
+    "daily": {
+      "success": true,
+      "execution_time": 0.022160768508911133,
+      "memory_current": 0.017354965209960938,
+      "memory_peak": 0.03249168395996094,
+      "configurations_tested": 20,
+      "best_power_mw": 1.0,
+      "best_duration_h": 2.0,
+      "best_efficiency": 0.9957987571102657
+    }
+  },
+  "dynamic_control": {
+    "24_steps": {
+      "success": true,
+      "execution_time": 0.0029129981994628906,
+      "memory_current": 0.00389862060546875,
+      "memory_peak": 0.006885528564453125,
+      "profile_length": 24,
+      "final_soc": 0.1,
+      "roundtrip_efficiency": 1.7608888888889054
+    },
+    "168_steps": {
+      "success": true,
+      "execution_time": 0.01783895492553711,
+      "memory_current": 0.00682830810546875,
+      "memory_peak": 0.00800323486328125,
+      "profile_length": 168,
+      "final_soc": 0.1,
+      "roundtrip_efficiency": 1.7608888888888892
+    },
+    "720_steps": {
+      "success": true,
+      "execution_time": 0.07568597793579102,
+      "memory_current": 0.023723602294921875,
+      "memory_peak": 0.029140472412109375,
+      "profile_length": 720,
+      "final_soc": 0.1,
+      "roundtrip_efficiency": 1.7608888888888892
+    }
+  },
+  "summary": {
+    "daily_success_rate": 1.0,
+    "weekly_success_rate": 1.0,
+    "monthly_success_rate": 1.0,
+    "annual_success_rate": 1.0,
+    "avg_strategy_time": 0.04693288803100586,
+    "max_strategy_time": 0.2608029842376709,
+    "min_strategy_time": 0.00109100341796875,
+    "time_shift_aggressive_success_rate": 1.0,
+    "solar_smoothing_success_rate": 1.0,
+    "cycling_demo_success_rate": 1.0,
+    "frequency_regulation_success_rate": 1.0,
+    "arbitrage_aggressive_success_rate": 1.0,
+    "total_tests_run": 20,
+    "overall_success_rate": 1.0
+  }
+}

@@ -1,0 +1,52 @@
+Análisis de costos de generación – Los Menucos
+
+Tasa de conversión utilizada: 1 USD = 1 050 ARS (julio 2025)
+
+Resumen interactivo
+
+La tabla original con cada línea de alquiler convertida a dólares está disponible en el panel interactivo del chat. Aquí se sintetizan los principales indicadores basados en la mediana del período.
+
+Métrica
+
+Valor típico
+
+Fórmula
+
+Mediana alquiler (sin combustible)
+
+0,36 USD / kW-día (≈ 10,8 USD / kW-mes)
+
+Total USD ÷ Potencia (kW) ÷ Días
+
+Equivalente energético (100 % carga)
+
+0,015 USD / kWh
+
+Valor anterior ÷ 24 h
+
+Costo combustible diésel (referencia)
+
+≈ 0,24 USD / kWh
+
+20 kW @ 1,6 gal/h, 3,17 USD/gal
+
+Costo total diésel real
+
+0,25 – 0,29 USD / kWh
+
+Alquiler + combustible
+
+LCOE solar utilitario 2024
+
+0,02 – 0,05 USD / kWh
+
+Subastas internacionales
+
+Observaciones clave
+
+Los alquileres relevados ahora se ubican en el rango 0,26 – 0,85 USD / kW-día para grupos > 500 kW (valores convertidos a 1 050 ARS/USD).
+
+Sumando combustible, la energía diésel resulta 5 – 10 × más cara que la solar utility-scale y ≈ 3 × el precio promedio CAMMESA (~0,09 USD/kWh).
+
+Se mantiene el outlier: factura por $ 8 139 944 (CAT 1 360 kVA, 1 día) ⇒ 7 752 USD (5,7 USD / kW-día). Conviene auditar la moneda de origen.
+
