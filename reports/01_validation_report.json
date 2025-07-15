@@ -1,0 +1,192 @@
+{
+  "timestamp": "2025-07-14T19:38:20.982160",
+  "summary": {
+    "total_records": 14025,
+    "dataset_a_records": 7742,
+    "dataset_b_records": 14012,
+    "excluded_records": 13,
+    "quality_coverage": 55.20142602495544,
+    "georef_coverage": 99.90730837789661
+  },
+  "data_quality": {
+    "type_issues": {
+      "type_mismatches": [],
+      "conversion_failures": [],
+      "conversions_made": []
+    },
+    "range_violations": {
+      "Potencia_valid": 307,
+      "Q_Usuarios_valid": 0,
+      "Coord_X_valid": 2414,
+      "Coord_Y_valid": 0
+    },
+    "range_details": {
+      "Potencia": {
+        "below_min": {
+          "count": 307,
+          "values": {
+            "0.0": 307
+          }
+        }
+      },
+      "Coord_X": {
+        "above_max": {
+          "count": 2414,
+          "values": {
+            "-63.011822759012": 19,
+            "-64.934205265056": 18,
+            "-62.982990564981": 18,
+            "-63.014573850726": 16,
+            "-63.001539024474": 14
+          }
+        }
+      }
+    },
+    "circuits_analysis": {
+      "total_transformers": 5779,
+      "single_circuit_transformers": 3846,
+      "multi_circuit_transformers": 1931,
+      "total_circuits": 14016,
+      "circuits_distribution": {
+        "0": 2,
+        "1": 3846,
+        "2": 1112,
+        "3": 502,
+        "4": 198,
+        "5": 60,
+        "6": 33,
+        "7": 10,
+        "8": 8,
+        "9": 5,
+        "10": 3
+      },
+      "mediciones_temporales": {
+        "total_mediciones": 9,
+        "sin_medicion": 6003,
+        "con_medicion": 8022,
+        "max_mediciones": 7
+      },
+      "multi_circuit_examples": [
+        {
+          "codigo": "A001",
+          "num_circuitos": 6,
+          "circuitos": [
+            2.0,
+            3.0,
+            4.0,
+            5.0,
+            6.0,
+            7.0
+          ],
+          "tiene_mediciones": false
+        },
+        {
+          "codigo": "A002",
+          "num_circuitos": 3,
+          "circuitos": [
+            3.0,
+            4.0,
+            5.0
+          ],
+          "tiene_mediciones": true
+        },
+        {
+          "codigo": "A004",
+          "num_circuitos": 2,
+          "circuitos": [
+            1.0,
+            2.0
+          ],
+          "tiene_mediciones": true
+        }
+      ]
+    },
+    "missing_values": {
+      "Codigoct": {
+        "total_missing": 0,
+        "percent_missing": 0.0,
+        "dataset_a_missing": 0,
+        "dataset_b_missing": 0
+      },
+      "N_Sucursal": {
+        "total_missing": 13,
+        "percent_missing": 0.09269162210338681,
+        "dataset_a_missing": 2,
+        "dataset_b_missing": 0
+      },
+      "Alimentador": {
+        "total_missing": 6003,
+        "percent_missing": 42.80213903743316,
+        "dataset_a_missing": 0,
+        "dataset_b_missing": 5992
+      },
+      "Potencia": {
+        "total_missing": 13,
+        "percent_missing": 0.09269162210338681,
+        "dataset_a_missing": 2,
+        "dataset_b_missing": 0
+      },
+      "Q_Usuarios": {
+        "total_missing": 13,
+        "percent_missing": 0.09269162210338681,
+        "dataset_a_missing": 2,
+        "dataset_b_missing": 0
+      },
+      "N_Localida": {
+        "total_missing": 13,
+        "percent_missing": 0.09269162210338681,
+        "dataset_a_missing": 2,
+        "dataset_b_missing": 0
+      },
+      "Coord_X": {
+        "total_missing": 13,
+        "percent_missing": 0.09269162210338681,
+        "dataset_a_missing": 2,
+        "dataset_b_missing": 0
+      },
+      "Coord_Y": {
+        "total_missing": 13,
+        "percent_missing": 0.09269162210338681,
+        "dataset_a_missing": 2,
+        "dataset_b_missing": 0
+      },
+      "Resultado": {
+        "total_missing": 6003,
+        "percent_missing": 42.80213903743316,
+        "dataset_a_missing": 0,
+        "dataset_b_missing": 5992
+      }
+    }
+  },
+  "dataset_characteristics": {
+    "dataset_a": {
+      "quality_distribution": {
+        "Correcta": 5011,
+        "Penalizada": 2025,
+        "Fallida": 706
+      },
+      "sucursales": 14,
+      "alimentadores": 133,
+      "potencia_total_mva": 1636.992,
+      "usuarios_totales": 779308
+    },
+    "dataset_b": {
+      "con_calidad": 7740,
+      "sin_calidad": 6272,
+      "localidades": 38,
+      "bbox": {
+        "min_x": -71.845285264123,
+        "max_x": -62.798891946219,
+        "min_y": -41.9919959662,
+        "max_y": -37.591332981899
+      }
+    }
+  },
+  "excluded_analysis": {
+    "total": 13,
+    "reasons": {
+      "sin_georeferenciacion": 13
+    },
+    "affected_sucursales": {}
+  }
+}

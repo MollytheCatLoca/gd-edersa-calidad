@@ -1,0 +1,126 @@
+{
+  "start_time": "2025-07-14T19:38:18.156585",
+  "input_file": "/Users/maxkeczeli/Proyects/gd-edersa-calidad/data/raw/Mediciones Originales EDERSA.xlsx",
+  "output_file": "/Users/maxkeczeli/Proyects/gd-edersa-calidad/data/interim/transformers_raw.csv",
+  "sheet_name": "Hoja 1",
+  "rows_read": 14025,
+  "columns_read": 26,
+  "memory_usage_mb": 13.694684982299805,
+  "data_types": {
+    "object": 17,
+    "float64": 7,
+    "int64": 2
+  },
+  "columns_with_nulls": 18,
+  "null_summary": {
+    "N_Sucursal": 13,
+    "Idtransformador": 3,
+    "Nro de circuito": 9,
+    "Codigo": 13,
+    "N_Ubicacio": 504,
+    "Potencia": 13,
+    "Marca": 315,
+    "Chapa": 315,
+    "Q_Usuarios": 13,
+    "N_Localida": 13,
+    "Expr1016": 13,
+    "Nro_EPRE": 6003,
+    "Resultado": 6003,
+    "Alimentador": 6003,
+    "N_Alimenta": 13,
+    "Tipo_Alimentador": 6003,
+    "Coord_X": 13,
+    "Coord_Y": 13
+  },
+  "output_size_mb": 3.0752792358398438,
+  "end_time": "2025-07-14T19:38:20.490021",
+  "status": "success",
+  "column_analysis": {
+    "Codigoct": {
+      "exists": true,
+      "dtype": "object",
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "unique_values": 5779
+    },
+    "N_Sucursal": {
+      "exists": true,
+      "dtype": "object",
+      "null_count": 13,
+      "null_percentage": 0.09269162210338681,
+      "unique_values": 14
+    },
+    "Alimentador": {
+      "exists": true,
+      "dtype": "object",
+      "null_count": 6003,
+      "null_percentage": 42.80213903743316,
+      "unique_values": 133
+    },
+    "Potencia": {
+      "exists": true,
+      "dtype": "float64",
+      "null_count": 13,
+      "null_percentage": 0.09269162210338681,
+      "unique_values": 32,
+      "min": 0.0,
+      "max": 800.0,
+      "mean": 197.1010562375107,
+      "std": 175.06050646117856
+    },
+    "Q_Usuarios": {
+      "exists": true,
+      "dtype": "float64",
+      "null_count": 13,
+      "null_percentage": 0.09269162210338681,
+      "unique_values": 387,
+      "min": 0.0,
+      "max": 823.0,
+      "mean": 87.6942620610905,
+      "std": 117.58497526961057
+    },
+    "N_Localida": {
+      "exists": true,
+      "dtype": "object",
+      "null_count": 13,
+      "null_percentage": 0.09269162210338681,
+      "unique_values": 38
+    },
+    "Coord_X": {
+      "exists": true,
+      "dtype": "float64",
+      "null_count": 13,
+      "null_percentage": 0.09269162210338681,
+      "unique_values": 5769,
+      "min": -71.845285264123,
+      "max": -62.798891946219,
+      "mean": -66.99311398806594,
+      "std": 2.068220178991173
+    },
+    "Coord_Y": {
+      "exists": true,
+      "dtype": "float64",
+      "null_count": 13,
+      "null_percentage": 0.09269162210338681,
+      "unique_values": 5762,
+      "min": -41.9919959662,
+      "max": -37.591332981899,
+      "mean": -39.60825540596361,
+      "std": 1.042521494713941
+    },
+    "Resultado": {
+      "exists": true,
+      "dtype": "object",
+      "null_count": 6003,
+      "null_percentage": 42.80213903743316,
+      "unique_values": 5,
+      "value_counts": {
+        "Correcta": 5011,
+        "Penalizada": 2025,
+        "Fallida": 706,
+        "No Instalado": 279,
+        "???": 1
+      }
+    }
+  }
+}

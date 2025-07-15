@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-07-14T19:38:26.247309",
+  "database_info": {
+    "path": "/Users/maxkeczeli/Proyects/gd-edersa-calidad/data/database/edersa_quality.db",
+    "size_mb": 2.28,
+    "tables": [
+      "transformadores",
+      "circuitos",
+      "sucursales",
+      "localidades",
+      "zonas_criticas",
+      "recomendaciones_gd",
+      "metricas_resumen"
+    ]
+  },
+  "data_summary": {
+    "fecha_actualizacion": "2025-07-14T19:38:26.217078",
+    "total_transformadores": 2690,
+    "total_circuitos": 14012,
+    "total_usuarios": 158476,
+    "capacidad_total_mva": 401.711,
+    "transformadores_correctos": 1454,
+    "transformadores_penalizados": 681,
+    "transformadores_fallidos": 555,
+    "transformadores_criticos": 555,
+    "oportunidades_gd_alta_prioridad": 831,
+    "capacidad_gd_potencial_mw": 27.37125,
+    "inversion_estimada_musd": 32.88,
+    "usuarios_beneficiados_gd": 58745
+  },
+  "ready_for_dashboard": true,
+  "next_steps": [
+    "Ejecutar el dashboard con: python dashboard/app_edersa.py",
+    "La base de datos está lista para consultas y visualización",
+    "Todos los índices han sido creados para optimizar el rendimiento"
+  ]
+}

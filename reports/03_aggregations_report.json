@@ -1,0 +1,407 @@
+{
+  "timestamp": "2025-07-14T19:38:24.667771",
+  "summary": {
+    "sucursales_analizadas": 42,
+    "localidades_analizadas": 81,
+    "zonas_geograficas": 5
+  },
+  "sucursales": {
+    "top_criticas": [
+      {
+        "N_Sucursal": "CIPOLLETTI",
+        "criticidad_promedio": 0.369837713676992,
+        "num_transformadores": 365,
+        "usuarios_totales": 31816.0
+      },
+      {
+        "N_Sucursal": "CIPOLLETTI",
+        "criticidad_promedio": 0.369837713676992,
+        "num_transformadores": 365,
+        "usuarios_totales": 31816.0
+      },
+      {
+        "N_Sucursal": "CIPOLLETTI",
+        "criticidad_promedio": 0.369837713676992,
+        "num_transformadores": 365,
+        "usuarios_totales": 31816.0
+      },
+      {
+        "N_Sucursal": "GENERAL ROCA",
+        "criticidad_promedio": 0.3456139671752743,
+        "num_transformadores": 339,
+        "usuarios_totales": 33787.0
+      },
+      {
+        "N_Sucursal": "GENERAL ROCA",
+        "criticidad_promedio": 0.3456139671752743,
+        "num_transformadores": 339,
+        "usuarios_totales": 33787.0
+      }
+    ],
+    "mayor_capacidad": [
+      {
+        "N_Sucursal": "CIPOLLETTI",
+        "potencia_total_kva": 84514.0,
+        "num_transformadores": 365
+      },
+      {
+        "N_Sucursal": "CIPOLLETTI",
+        "potencia_total_kva": 84514.0,
+        "num_transformadores": 365
+      },
+      {
+        "N_Sucursal": "CIPOLLETTI",
+        "potencia_total_kva": 84514.0,
+        "num_transformadores": 365
+      },
+      {
+        "N_Sucursal": "GENERAL ROCA",
+        "potencia_total_kva": 72651.0,
+        "num_transformadores": 339
+      },
+      {
+        "N_Sucursal": "GENERAL ROCA",
+        "potencia_total_kva": 72651.0,
+        "num_transformadores": 339
+      }
+    ],
+    "estadisticas": {
+      "transformadores_promedio": 192.07142857142858,
+      "usuarios_promedio": 11319.714285714286,
+      "indice_calidad_promedio": 0.0
+    }
+  },
+  "localidades": {
+    "top_criticas": [
+      {
+        "N_Localida": "San Javier",
+        "criticidad_promedio": 0.7127582017010936,
+        "num_transformadores": 1
+      },
+      {
+        "N_Localida": "San Javier",
+        "criticidad_promedio": 0.7127582017010936,
+        "num_transformadores": 1
+      },
+      {
+        "N_Localida": "San Javier",
+        "criticidad_promedio": 0.7127582017010936,
+        "num_transformadores": 1
+      },
+      {
+        "N_Localida": "Yaminue",
+        "criticidad_promedio": 0.7007290400972054,
+        "num_transformadores": 1
+      },
+      {
+        "N_Localida": "Yaminue",
+        "criticidad_promedio": 0.7007290400972054,
+        "num_transformadores": 1
+      }
+    ],
+    "estadisticas": {
+      "total": 81,
+      "con_problemas_graves": 6
+    }
+  },
+  "zonas_criticas": {
+    "sucursales": {
+      "baja_calidad": [
+        {
+          "N_Sucursal": "CIPOLLETTI",
+          "num_transformadores": 365,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 31816.0
+        },
+        {
+          "N_Sucursal": "ALLEN",
+          "num_transformadores": 167,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 8287.0
+        },
+        {
+          "N_Sucursal": "INGENIERO JACOBACCI",
+          "num_transformadores": 111,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 5072.0
+        },
+        {
+          "N_Sucursal": "INGENIERO JACOBACCI",
+          "num_transformadores": 111,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 5072.0
+        },
+        {
+          "N_Sucursal": "INGENIERO JACOBACCI",
+          "num_transformadores": 111,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 5072.0
+        },
+        {
+          "N_Sucursal": "GENERAL CONESA",
+          "num_transformadores": 69,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 1057.0
+        },
+        {
+          "N_Sucursal": "GENERAL CONESA",
+          "num_transformadores": 69,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 1057.0
+        },
+        {
+          "N_Sucursal": "GENERAL CONESA",
+          "num_transformadores": 69,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 1057.0
+        },
+        {
+          "N_Sucursal": "CHOELE CHOEL",
+          "num_transformadores": 300,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 10641.0
+        },
+        {
+          "N_Sucursal": "CHOELE CHOEL",
+          "num_transformadores": 300,
+          "indice_calidad": 0.0,
+          "usuarios_totales": 10641.0
+        }
+      ],
+      "alta_criticidad": [],
+      "alto_impacto": [
+        {
+          "N_Sucursal": "CIPOLLETTI",
+          "impacto_usuarios": 11766.756698347177,
+          "usuarios_totales": 31816.0,
+          "criticidad_promedio": 0.369837713676992,
+          "num_transformadores": 365
+        },
+        {
+          "N_Sucursal": "CIPOLLETTI",
+          "impacto_usuarios": 11766.756698347177,
+          "usuarios_totales": 31816.0,
+          "criticidad_promedio": 0.369837713676992,
+          "num_transformadores": 365
+        },
+        {
+          "N_Sucursal": "CIPOLLETTI",
+          "impacto_usuarios": 11766.756698347177,
+          "usuarios_totales": 31816.0,
+          "criticidad_promedio": 0.369837713676992,
+          "num_transformadores": 365
+        },
+        {
+          "N_Sucursal": "GENERAL ROCA",
+          "impacto_usuarios": 11677.259108950993,
+          "usuarios_totales": 33787.0,
+          "criticidad_promedio": 0.3456139671752743,
+          "num_transformadores": 339
+        },
+        {
+          "N_Sucursal": "GENERAL ROCA",
+          "impacto_usuarios": 11677.259108950993,
+          "usuarios_totales": 33787.0,
+          "criticidad_promedio": 0.3456139671752743,
+          "num_transformadores": 339
+        },
+        {
+          "N_Sucursal": "GENERAL ROCA",
+          "impacto_usuarios": 11677.259108950993,
+          "usuarios_totales": 33787.0,
+          "criticidad_promedio": 0.3456139671752743,
+          "num_transformadores": 339
+        },
+        {
+          "N_Sucursal": "VILLA REGINA",
+          "impacto_usuarios": 3774.7797160644836,
+          "usuarios_totales": 14901.0,
+          "criticidad_promedio": 0.2533239189359428,
+          "num_transformadores": 299
+        },
+        {
+          "N_Sucursal": "VILLA REGINA",
+          "impacto_usuarios": 3774.7797160644836,
+          "usuarios_totales": 14901.0,
+          "criticidad_promedio": 0.2533239189359428,
+          "num_transformadores": 299
+        },
+        {
+          "N_Sucursal": "VILLA REGINA",
+          "impacto_usuarios": 3774.7797160644836,
+          "usuarios_totales": 14901.0,
+          "criticidad_promedio": 0.2533239189359428,
+          "num_transformadores": 299
+        },
+        {
+          "N_Sucursal": "VIEDMA",
+          "impacto_usuarios": 2846.7087535899705,
+          "usuarios_totales": 19768.0,
+          "criticidad_promedio": 0.1440059061913178,
+          "num_transformadores": 352
+        }
+      ]
+    },
+    "localidades": {
+      "alta_criticidad": [
+        {
+          "N_Localida": "San Javier",
+          "criticidad_promedio": 0.7127582017010936,
+          "num_transformadores": 1,
+          "usuarios_totales": 35.0
+        },
+        {
+          "N_Localida": "San Javier",
+          "criticidad_promedio": 0.7127582017010936,
+          "num_transformadores": 1,
+          "usuarios_totales": 35.0
+        },
+        {
+          "N_Localida": "San Javier",
+          "criticidad_promedio": 0.7127582017010936,
+          "num_transformadores": 1,
+          "usuarios_totales": 35.0
+        },
+        {
+          "N_Localida": "Yaminue",
+          "criticidad_promedio": 0.7007290400972054,
+          "num_transformadores": 1,
+          "usuarios_totales": 2.0
+        },
+        {
+          "N_Localida": "Yaminue",
+          "criticidad_promedio": 0.7007290400972054,
+          "num_transformadores": 1,
+          "usuarios_totales": 2.0
+        },
+        {
+          "N_Localida": "Yaminue",
+          "criticidad_promedio": 0.7007290400972054,
+          "num_transformadores": 1,
+          "usuarios_totales": 2.0
+        }
+      ],
+      "alto_impacto": [
+        {
+          "N_Localida": "Cipolletti",
+          "impacto_usuarios": 11805.063465674362,
+          "usuarios_totales": 31793.0,
+          "num_transformadores": 360
+        },
+        {
+          "N_Localida": "Cipolletti",
+          "impacto_usuarios": 11805.063465674362,
+          "usuarios_totales": 31793.0,
+          "num_transformadores": 360
+        },
+        {
+          "N_Localida": "Cipolletti",
+          "impacto_usuarios": 11805.063465674362,
+          "usuarios_totales": 31793.0,
+          "num_transformadores": 360
+        },
+        {
+          "N_Localida": "Gral. Roca",
+          "impacto_usuarios": 11641.453133506368,
+          "usuarios_totales": 33786.0,
+          "num_transformadores": 338
+        },
+        {
+          "N_Localida": "Gral. Roca",
+          "impacto_usuarios": 11641.453133506368,
+          "usuarios_totales": 33786.0,
+          "num_transformadores": 338
+        },
+        {
+          "N_Localida": "Gral. Roca",
+          "impacto_usuarios": 11641.453133506368,
+          "usuarios_totales": 33786.0,
+          "num_transformadores": 338
+        },
+        {
+          "N_Localida": "Villa Regina",
+          "impacto_usuarios": 3785.9034982100197,
+          "usuarios_totales": 14895.0,
+          "num_transformadores": 298
+        },
+        {
+          "N_Localida": "Villa Regina",
+          "impacto_usuarios": 3785.9034982100197,
+          "usuarios_totales": 14895.0,
+          "num_transformadores": 298
+        },
+        {
+          "N_Localida": "Villa Regina",
+          "impacto_usuarios": 3785.9034982100197,
+          "usuarios_totales": 14895.0,
+          "num_transformadores": 298
+        },
+        {
+          "N_Localida": "Viedma",
+          "impacto_usuarios": 2854.5017562998573,
+          "usuarios_totales": 19705.0,
+          "num_transformadores": 345
+        }
+      ]
+    },
+    "summary": {
+      "sucursales_criticas": 0,
+      "localidades_criticas": 6,
+      "transformadores_en_zonas_criticas": "0",
+      "usuarios_afectados": 0.0,
+      "potencia_en_riesgo_mva": 0.0
+    }
+  },
+  "geographic_distribution": [
+    {
+      "zona_geografica": "Noroeste",
+      "num_transformadores": 1006,
+      "potencia_total_kva": 195938.0,
+      "usuarios_totales": 75431.0,
+      "quality_score_promedio": 0.5780318091451292,
+      "criticidad_promedio": 0.29870765685353257,
+      "num_fallidas": 255,
+      "pct_fallidas": 25.347912524850898
+    },
+    {
+      "zona_geografica": "Noreste",
+      "num_transformadores": 339,
+      "potencia_total_kva": 57962.0,
+      "usuarios_totales": 23487.0,
+      "quality_score_promedio": 0.5825958702064897,
+      "criticidad_promedio": 0.297693218923501,
+      "num_fallidas": 96,
+      "pct_fallidas": 28.31858407079646
+    },
+    {
+      "zona_geografica": "Sureste",
+      "num_transformadores": 1006,
+      "potencia_total_kva": 127480.0,
+      "usuarios_totales": 47886.0,
+      "quality_score_promedio": 0.7539761431411531,
+      "criticidad_promedio": 0.17553964789634008,
+      "num_fallidas": 151,
+      "pct_fallidas": 15.009940357852884
+    },
+    {
+      "zona_geografica": "Suroeste",
+      "num_transformadores": 338,
+      "potencia_total_kva": 20231.0,
+      "usuarios_totales": 11672.0,
+      "quality_score_promedio": 0.757396449704142,
+      "criticidad_promedio": 0.17233902161956186,
+      "num_fallidas": 53,
+      "pct_fallidas": 15.680473372781064
+    },
+    {
+      "zona_geografica": "Sin coordenadas",
+      "num_transformadores": 1,
+      "potencia_total_kva": 100.0,
+      "usuarios_totales": 0.0,
+      "quality_score_promedio": 1.0,
+      "criticidad_promedio": NaN,
+      "num_fallidas": 0,
+      "pct_fallidas": 0.0
+    }
+  ]
+}

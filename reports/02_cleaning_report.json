@@ -1,0 +1,86 @@
+{
+  "timestamp": "2025-07-14T19:38:24.056953",
+  "summary": {
+    "original_records": 14012,
+    "cleaned_records": 2690,
+    "transformers_unique": 2690
+  },
+  "cleaning_operations": {
+    "A - Análisis de calidad_aggregation": {
+      "before": 7742,
+      "after": 2690,
+      "reduction": 5052
+    },
+    "A - Análisis de calidad_power_imputation": {
+      "imputed": 33
+    },
+    "B - Inventario completo_power_imputation": {
+      "imputed": 307
+    }
+  },
+  "data_quality": {
+    "potencia_imputada": 33,
+    "con_coordenadas": 2689,
+    "con_quality_score": 2690
+  },
+  "enrichment_summary": {
+    "campos_agregados": [
+      "num_circuitos",
+      "usuarios_por_kva",
+      "size_category",
+      "factor_utilizacion_estimado",
+      "quality_score",
+      "zona_geografica",
+      "tipo_zona",
+      "criticidad_compuesta",
+      "prioridad_gd"
+    ],
+    "indices_calculados": {
+      "criticidad_tecnica": {
+        "count": 2690.0,
+        "mean": 0.3328996282527881,
+        "std": 0.3985555842039126,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.5,
+        "max": 1.0
+      },
+      "criticidad_usuarios": {
+        "count": 2689.0,
+        "mean": 0.03608079719951723,
+        "std": 0.0883455030006388,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.01701093560145808,
+        "max": 1.0
+      },
+      "criticidad_compuesta": {
+        "count": 2689.0,
+        "mean": 0.23661635518811844,
+        "std": 0.28491237477270165,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.36913730255164034,
+        "max": 0.9394896719319563
+      }
+    }
+  },
+  "geographic_analysis": {
+    "zonas": {
+      "Noroeste": 1006,
+      "Sureste": 1006,
+      "Noreste": 339,
+      "Suroeste": 338,
+      "Sin coordenadas": 1
+    },
+    "tipo_zona": {
+      "Rural": 2281,
+      "Periurbano": 308,
+      "Urbano": 101
+    },
+    "clusters": 64
+  }
+}

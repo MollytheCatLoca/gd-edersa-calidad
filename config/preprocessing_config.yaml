@@ -1,0 +1,238 @@
+# Configuración para el pipeline de preprocesamiento EDERSA
+# Julio 2025
+
+# Paths del proyecto
+paths:
+  # Datos de entrada
+  raw_excel: "data/raw/Mediciones Originales EDERSA.xlsx"
+  raw_sheet: "Hoja 1"
+  
+  # Directorios de trabajo
+  interim: "data/interim/"
+  processed: "data/processed/"
+  reports: "reports/"
+  logs: "logs/"
+  
+  # Archivos intermedios
+  raw_csv: "data/interim/transformers_raw.csv"
+  validated_csv: "data/interim/transformers_validated.csv"
+  clean_csv: "data/processed/transformers_clean.csv"
+  clean_parquet: "data/processed/transformers_clean.parquet"
+  
+  # Base de datos final
+  database: "data/processed/edersa.db"
+
+# Columnas esperadas en el dataset
+columns:
+  # Columnas obligatorias
+  required:
+    - Codigoct        # ID único del transformador
+    - N_Sucursal      # Nombre de la sucursal
+    - Alimentador     # Código del alimentador
+    - Potencia        # Capacidad en kVA
+    - Resultado       # Estado de calidad
+  
+  # Columnas opcionales pero importantes
+  optional:
+    - Q_Usuarios      # Cantidad de usuarios
+    - N_Localida      # Localidad
+    - Coord_X         # Coordenada X (longitud)
+    - Coord_Y         # Coordenada Y (latitud)
+  
+  # Mapeo de tipos de datos esperados
+  dtypes:
+    Codigoct: str
+    N_Sucursal: str
+    Alimentador: str
+    Potencia: float
+    Q_Usuarios: int
+    N_Localida: str
+    Coord_X: float
+    Coord_Y: float
+    Resultado: str
+
+# Reglas de validación
+validation:
+  # Rangos válidos para campos numéricos
+  ranges:
+    Potencia:
+      min: 5
+      max: 2000
+      unit: "kVA"
+      description: "Capacidad del transformador"
+    
+    Q_Usuarios:
+      min: 0
+      max: 5000
+      description: "Usuarios por transformador"
+    
+    Coord_X:
+      min: -75
+      max: -65
+      description: "Longitud (Argentina)"
+    
+    Coord_Y:
+      min: -45
+      max: -35
+      description: "Latitud (Río Negro)"
+  
+  # Valores permitidos para campos categóricos
+  categorical:
+    Resultado:
+      - "Correcta"
+      - "Penalizada"
+      - "Fallida"
+  
+  # Tolerancia para valores faltantes (porcentaje)
+  missing_tolerance:
+    Codigoct: 0.0        # No se permiten nulos
+    N_Sucursal: 0.0      # No se permiten nulos
+    Alimentador: 0.0     # No se permiten nulos
+    Potencia: 0.0        # No se permiten nulos
+    Resultado: 0.0       # No se permiten nulos
+    Q_Usuarios: 0.1      # 10% máximo
+    N_Localida: 0.2      # 20% máximo
+    Coord_X: 0.3         # 30% máximo
+    Coord_Y: 0.3         # 30% máximo
+
+# Reglas de limpieza
+cleaning:
+  # Normalización de strings
+  string_normalization:
+    N_Sucursal:
+      - upper          # Convertir a mayúsculas
+      - strip          # Eliminar espacios
+    Alimentador:
+      - upper
+      - strip
+    N_Localida:
+      - title          # Primera letra en mayúscula
+      - strip
+  
+  # Imputación de valores faltantes
+  imputation:
+    Q_Usuarios:
+      method: "median_by_group"
+      group_by: "Alimentador"
+      fallback: 10
+    
+    Coord_X:
+      method: "geocoding"
+      source: "N_Localida"
+    
+    Coord_Y:
+      method: "geocoding"
+      source: "N_Localida"
+
+# Enriquecimiento de datos
+enrichment:
+  # Campos calculados
+  calculated_fields:
+    - name: "quality_score"
+      description: "Score numérico de calidad"
+      formula: "1.0 if Resultado=='Correcta' else 0.5 if Resultado=='Penalizada' else 0.0"
+    
+    - name: "size_category"
+      description: "Categoría por tamaño"
+      rules:
+        - condition: "Potencia < 100"
+          value: "Pequeño"
+        - condition: "Potencia >= 100 and Potencia < 500"
+          value: "Mediano"
+        - condition: "Potencia >= 500"
+          value: "Grande"
+    
+    - name: "load_density"
+      description: "Densidad de carga (usuarios/kVA)"
+      formula: "Q_Usuarios / Potencia if Potencia > 0 else 0"
+    
+    - name: "has_coordinates"
+      description: "Indica si tiene coordenadas válidas"
+      formula: "Coord_X is not null and Coord_Y is not null"
+
+# Configuración de análisis espacial
+spatial:
+  # Sistema de coordenadas
+  crs: "EPSG:4326"  # WGS84
+  
+  # Clustering
+  clustering:
+    algorithm: "DBSCAN"
+    eps: 0.01         # ~1 km en lat/lon
+    min_samples: 5
+  
+  # Hot spots
+  hotspots:
+    method: "getis_ord"
+    distance_band: 2000  # metros
+    
+  # Buffer para análisis de cobertura
+  coverage_buffer: 500   # metros
+
+# Configuración de agregaciones
+aggregations:
+  # Métricas a calcular por grupo
+  metrics:
+    - count            # Cantidad de transformadores
+    - sum_potencia     # Potencia total kVA
+    - sum_usuarios     # Usuarios totales
+    - count_penalized  # Transformadores penalizados
+    - mean_quality     # Score promedio de calidad
+    - std_quality      # Desviación estándar de calidad
+  
+  # Niveles de agregación
+  levels:
+    - "sucursal"
+    - "alimentador"
+    - "localidad"
+    - "size_category"
+
+# Índices de criticidad
+criticality:
+  # Pesos para el índice compuesto
+  weights:
+    quality_rate: 0.4      # Tasa de penalización
+    user_impact: 0.3       # Usuarios afectados
+    capacity_impact: 0.3   # Capacidad afectada
+  
+  # Umbrales
+  thresholds:
+    high: 0.7
+    medium: 0.4
+    low: 0.0
+
+# Configuración de reportes
+reporting:
+  # Formatos de salida
+  formats:
+    - json
+    - html
+    - excel
+  
+  # Secciones del reporte
+  sections:
+    - data_quality
+    - validation_summary
+    - cleaning_summary
+    - spatial_analysis
+    - aggregation_results
+    - critical_zones
+
+# Configuración de logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+# Opciones de ejecución
+execution:
+  # Modo de validación
+  validation_mode: "strict"  # strict | permissive
+  
+  # Guardar backups intermedios
+  save_intermediate: true
+  
+  # Procesar en chunks para datasets grandes
+  chunk_size: 10000
+  
+  # Número de procesos paralelos
+  n_jobs: -1  # -1 usa todos los cores disponibles

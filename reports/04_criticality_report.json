@@ -1,0 +1,354 @@
+{
+  "timestamp": "2025-07-14T19:38:25.709141",
+  "executive_summary": {
+    "transformadores_analizados": 2690,
+    "transformadores_criticos": 555,
+    "oportunidades_gd_identificadas": 50,
+    "inversion_estimada_musd": 32.88,
+    "usuarios_beneficiados": 58745
+  },
+  "failure_patterns": {
+    "by_size": {
+      "Grande": {
+        "pct_fallida": 30.38,
+        "quality_promedio": 0.5,
+        "total": 79
+      },
+      "Mediano": {
+        "pct_fallida": 30.33,
+        "quality_promedio": 0.52,
+        "total": 511
+      },
+      "Micro": {
+        "pct_fallida": 15.19,
+        "quality_promedio": 0.75,
+        "total": 1580
+      },
+      "Pequeño": {
+        "pct_fallida": 26.15,
+        "quality_promedio": 0.59,
+        "total": 520
+      }
+    },
+    "by_load": {
+      "Baja": {
+        "pct_fallida": 13.63,
+        "quality_promedio": 0.74,
+        "total": 675
+      },
+      "Media-Baja": {
+        "pct_fallida": 16.46,
+        "quality_promedio": 0.72,
+        "total": 741
+      },
+      "Media-Alta": {
+        "pct_fallida": 22.8,
+        "quality_promedio": 0.63,
+        "total": 601
+      },
+      "Alta": {
+        "pct_fallida": 30.36,
+        "quality_promedio": 0.56,
+        "total": 672
+      }
+    },
+    "by_location_type": {
+      "Periurbano": {
+        "pct_fallida": 27.27,
+        "criticidad_promedio": 0.27,
+        "total": 308,
+        "usuarios": 33636.0
+      },
+      "Rural": {
+        "pct_fallida": 18.94,
+        "criticidad_promedio": 0.23,
+        "total": 2281,
+        "usuarios": 106963.0
+      },
+      "Urbano": {
+        "pct_fallida": 38.61,
+        "criticidad_promedio": 0.33,
+        "total": 101,
+        "usuarios": 17877.0
+      }
+    },
+    "correlations": {
+      "Potencia": {
+        "correlation": 0.1678,
+        "p_value": 0.0,
+        "significant": "True"
+      },
+      "Q_Usuarios": {
+        "correlation": 0.2096,
+        "p_value": 0.0,
+        "significant": "True"
+      },
+      "usuarios_por_kva": {
+        "correlation": 0.1157,
+        "p_value": 0.0,
+        "significant": "True"
+      },
+      "factor_utilizacion_estimado": {
+        "correlation": 0.1466,
+        "p_value": 0.0,
+        "significant": "True"
+      },
+      "densidad_local": {
+        "correlation": 0.1096,
+        "p_value": 0.0,
+        "significant": "True"
+      }
+    }
+  },
+  "gd_recommendations": {
+    "top_opportunities": [
+      {
+        "codigo": "K005",
+        "sucursal": "CATRIEL",
+        "localidad": "Catriel",
+        "score": 0.849,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 119,
+        "criticidad": 0.743,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 119 usuarios"
+        ]
+      },
+      {
+        "codigo": "A412",
+        "sucursal": "CIPOLLETTI",
+        "localidad": "Cipolletti",
+        "score": 0.848,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 147,
+        "criticidad": 0.754,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 147 usuarios"
+        ]
+      },
+      {
+        "codigo": "C312",
+        "sucursal": "GENERAL ROCA",
+        "localidad": "Gral. Roca",
+        "score": 0.847,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 169,
+        "criticidad": 0.762,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 169 usuarios"
+        ]
+      },
+      {
+        "codigo": "A002",
+        "sucursal": "CIPOLLETTI",
+        "localidad": "Cipolletti",
+        "score": 0.845,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 233,
+        "criticidad": 0.785,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 233 usuarios"
+        ]
+      },
+      {
+        "codigo": "H053",
+        "sucursal": "SAN ANTONIO OESTE",
+        "localidad": "San Antonio Oeste",
+        "score": 0.845,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 234,
+        "criticidad": 0.785,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 234 usuarios"
+        ]
+      },
+      {
+        "codigo": "D009",
+        "sucursal": "VILLA REGINA",
+        "localidad": "Villa Regina",
+        "score": 0.844,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 277,
+        "criticidad": 0.801,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 277 usuarios"
+        ]
+      },
+      {
+        "codigo": "D029",
+        "sucursal": "VILLA REGINA",
+        "localidad": "Villa Regina",
+        "score": 0.842,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 347,
+        "criticidad": 0.826,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 347 usuarios"
+        ]
+      },
+      {
+        "codigo": "C215b",
+        "sucursal": "GENERAL ROCA",
+        "localidad": "Gral. Roca",
+        "score": 0.842,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 351,
+        "criticidad": 0.828,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 351 usuarios"
+        ]
+      },
+      {
+        "codigo": "H003",
+        "sucursal": "SAN ANTONIO OESTE",
+        "localidad": "San Antonio Oeste",
+        "score": 0.841,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 374,
+        "criticidad": 0.836,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 374 usuarios"
+        ]
+      },
+      {
+        "codigo": "A117",
+        "sucursal": "CIPOLLETTI",
+        "localidad": "Cipolletti",
+        "score": 0.839,
+        "prioridad": "Muy Alta",
+        "capacidad_actual_kva": 630.0,
+        "usuarios": 428,
+        "criticidad": 0.856,
+        "calidad_actual": "Fallida",
+        "tipo_gd_recomendado": "Solar + BESS",
+        "capacidad_gd_kw": 141.8,
+        "beneficios_esperados": [
+          "Mejora significativa de calidad de servicio",
+          "Reducción de pérdidas en líneas largas",
+          "Beneficio a 428 usuarios"
+        ]
+      }
+    ],
+    "summary_by_type": {
+      "BESS para peak shaving": {
+        "cantidad": 1,
+        "capacidad_total_kw": 90.0,
+        "usuarios_totales": 539
+      },
+      "Solar + BESS": {
+        "cantidad": 33,
+        "capacidad_total_kw": 4257.7,
+        "usuarios_totales": 10206
+      },
+      "Solar estándar": {
+        "cantidad": 16,
+        "capacidad_total_kw": 1451.2,
+        "usuarios_totales": 3471
+      }
+    },
+    "geographic_distribution": {
+      "Rural": 293,
+      "Periurbano": 40,
+      "Urbano": 9
+    }
+  },
+  "expected_impact": {
+    "transformadores_beneficiados": 342,
+    "usuarios_beneficiados": 58745,
+    "capacidad_total_mva": 121.65,
+    "capacidad_gd_potencial_mw": 27.37,
+    "mejora_calidad_estimada": {
+      "transformadores_fallidos_actual": 261,
+      "transformadores_penalizados_actual": 81,
+      "mejora_esperada_pct": 70,
+      "transformadores_mejorados": 239
+    },
+    "distribucion_geografica": {
+      "Rural": 293,
+      "Periurbano": 40,
+      "Urbano": 9
+    },
+    "inversion_estimada": {
+      "Solar pequeña escala": {
+        "kw_total": 1434.4,
+        "costo_unitario_usd_kw": 1200,
+        "inversion_total_usd": 1721250.0
+      },
+      "Solar estándar": {
+        "kw_total": 12364.9,
+        "costo_unitario_usd_kw": 1000,
+        "inversion_total_usd": 12364875.0
+      },
+      "Solar + BESS": {
+        "kw_total": 11344.5,
+        "costo_unitario_usd_kw": 1500,
+        "inversion_total_usd": 17016750.0
+      },
+      "BESS para peak shaving": {
+        "kw_total": 2227.5,
+        "costo_unitario_usd_kw": 800,
+        "inversion_total_usd": 1782000.0
+      },
+      "total_usd": 32884875.0,
+      "total_millones_usd": 32.88
+    }
+  },
+  "key_insights": [
+    "Transformadores Grande tienen mayor tasa de falla (30.38%)",
+    "Inversión de $32.9M beneficiaría a 1786 usuarios por millón invertido"
+  ]
+}

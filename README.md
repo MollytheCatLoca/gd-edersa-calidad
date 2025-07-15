@@ -1,138 +1,83 @@
-# Estudio de Generación Distribuida - Línea Sur Río Negro
+# GD-EDERSA-CALIDAD
+## Análisis de Calidad de Servicio y Oportunidades de Generación Distribuida
 
-## 🎯 Resumen Ejecutivo
+### 🎯 Objetivo
+Identificar ubicaciones óptimas para instalación de Generación Distribuida (GD) en la red EDERSA, basándose en el análisis de calidad de servicio de 14,025 transformadores.
 
-Análisis técnico-económico integral para optimizar el sistema de transmisión de 33 kV de la Línea Sur de Río Negro mediante Generación Distribuida (GD) fotovoltaica con almacenamiento (BESS).
+### 📊 Datos Disponibles
+- **Inventario completo** de transformadores EDERSA
+- **Resultados de calidad** (Correcta/Penalizada/Fallida)
+- **Ubicación geográfica** de cada transformador
+- **Capacidad instalada** y usuarios por transformador
 
-### 🔴 Problema Crítico
-- **270 km** de línea radial con caídas de tensión del **76%** (0.24 pu)
-- **100%** de mediciones fuera de límites regulatorios
-- **164 horas/año** con colapso total de voltaje
-- Capacidad **NULA** para nuevas cargas
-
-### ✅ Solución Propuesta
-Instalación estratégica de sistemas FV+BESS en puntos críticos:
-
-| Ubicación | FV (MW) | BESS (MWh) | TIR | Beneficio Principal |
-|-----------|---------|------------|-----|---------------------|
-| **Los Menucos** | 3.0 | 2.0 | 22.9% | Elimina generación diesel |
-| **Jacobacci** | 1.0 | 1.0 | 24.8% | Mayor demanda post-Menucos |
-
-## 🚀 Inicio Rápido
+### 🚀 Inicio Rápido
 
 ```bash
-# Clonar repositorio
-git clone [url-repo]
-cd estudio-gd-linea-sur
+# Activar entorno
+source venv/bin/activate
 
 # Instalar dependencias
-python3 -m venv venv
-source venv/bin/activate
 pip install -r requirements.txt
 
-# Ejecutar dashboard interactivo
+# Ejecutar dashboard
 cd dashboard
-python app_multipagina.py
+python app_edersa.py
 ```
 
-Abrir http://localhost:8050 en el navegador
+Abrir http://localhost:8051 en el navegador
 
-## 📊 Dashboard Interactivo
-
-El proyecto incluye un dashboard completo con análisis por fases:
-
-- **Fase 1**: Comprensión del sistema eléctrico actual
-- **Fase 2**: Modelado topológico de la red
-- **Fase 3**: Procesamiento de datos históricos (210,156 registros)
-- **Fase 4**: Laboratorio solar + BESS con simulaciones
-
-## 📁 Estructura del Proyecto
+### 📁 Estructura del Proyecto
 
 ```
-estudio-gd-linea-sur/
-├── src/                    # Código fuente principal
-│   ├── topology/          # Modelado de red
-│   ├── solar/             # Simulación FV
-│   └── bess/              # Modelos de baterías
-├── dashboard/              # Aplicación web interactiva
-├── data/                   # Datos procesados y análisis
-├── docs/                   # Documentación completa
-│   ├── CLAUDE.md          # Guía técnica detallada
-│   ├── technical_analysis/ # Análisis de voltaje y pérdidas
-│   └── economic_analysis/  # Evaluaciones financieras
-├── scripts/                # Scripts de análisis
-└── tests/                  # Tests y resultados
-
+gd-edersa-calidad/
+├── src/
+│   ├── inventory/        # Manejo de inventario de transformadores
+│   ├── quality/          # Análisis de calidad de servicio
+│   ├── clustering/       # Agrupación geográfica y por criticidad
+│   └── optimization/     # Optimización de ubicaciones GD
+├── data/
+│   ├── raw/             # Excel original EDERSA
+│   └── processed/       # Datos procesados
+├── dashboard/           # Visualización interactiva
+├── docs/               # Documentación
+└── tests/              # Tests unitarios
 ```
 
-## 💡 Resultados Clave
+### 🔍 Metodología
 
-### Los Menucos (Punta de línea)
-- **Inversión**: USD 3.06M (3MW FV + 2MWh BESS)
-- **Beneficios año 1**: USD 818,590
-- **Payback**: 4.7 años
-- **Mejora voltaje**: 0.237 → 0.273 pu (+15%)
+1. **Análisis de Inventario**: Procesamiento del Excel con 14,025 transformadores
+2. **Evaluación de Calidad**: Identificación de 2,731 transformadores problemáticos
+3. **Clustering Geográfico**: Agrupación por densidad y criticidad
+4. **Priorización**: Ranking de zonas por impacto en usuarios
+5. **Dimensionamiento GD**: Estimación preliminar sin series temporales
 
-### Jacobacci (Nodo intermedio)
-- **Demanda**: 0.507 MW promedio (máx 1.17 MW)
-- **Sensibilidad dV/dP**: +0.0115 pu/MW
-- **ENS actual**: 117.55 MWh/año
+### 📈 Resultados Preliminares
 
-## 📈 Análisis Disponibles
+- **34% de transformadores** con problemas de calidad
+- **~180,000 usuarios afectados** (estimado)
+- **14 sucursales** analizadas
+- **133 alimentadores** evaluados
 
-### Técnicos
-- Flujos de potencia DC con pérdidas
-- Análisis de sensibilidad dV/dP por nodo
-- Curvas de duración y patrones temporales
-- Simulación horaria con FV+BESS
+### 🛠️ Próximos Pasos
 
-### Económicos
-- VAN, TIR, LCOE por escenario
-- Análisis de sensibilidad
-- Reducción de pérdidas técnicas
-- Valorización de mejora de calidad
+1. Solicitar **series temporales** de demanda
+2. Obtener **topología de red** detallada
+3. Integrar **costos de penalizaciones**
+4. Realizar **simulaciones** de impacto GD
 
-## 🛠️ Herramientas Principales
+### 📚 Documentación Técnica
 
-- **Python 3.12+** con pandas, numpy, scipy
-- **Dash/Plotly** para visualización interactiva
-- **PandaPower** para análisis de red (opcional)
-- **XGBoost** para predicciones ML
+- [Análisis de Datos](docs/analysis/)
+- [Metodología](docs/methodology/)
+- [API Reference](docs/api/)
 
-## 📚 Documentación
+### 👥 Equipo
+- Análisis técnico: [Tu nombre]
+- Framework base: Proyecto Línea Sur RN
 
-- [Guía Técnica Completa](docs/CLAUDE.md) - Metodología de 9 fases
-- [Análisis Económico Los Menucos](docs/economic_analysis/los_menucos_analisis_economico.md)
-- [Datos Técnicos Jacobacci](docs/technical_analysis/jacobacci_technical_data.md)
-- [Impacto Mejora de Voltaje](docs/technical_analysis/analisis_mejora_voltaje_los_menucos.md)
-
-## 🔍 Datos Procesados
-
-- **Período**: Enero 2024 - Abril 2025 (15 meses)
-- **Resolución**: 15 minutos
-- **Estaciones**: Pilcaniyeu, Jacobacci, Maquinchao, Los Menucos
-- **Calidad**: 100% cobertura temporal, validación completa
-
-## 🎯 Próximos Pasos
-
-1. **Ingeniería de detalle** para Los Menucos
-2. **Gestión regulatoria** con CAMMESA
-3. **Estructuración financiera** del proyecto
-4. **Licitación EPC** y construcción
-
-## 👥 Contribuir
-
-1. Fork el repositorio
-2. Crear branch (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit cambios (`git commit -am 'Agregar nueva funcionalidad'`)
-4. Push al branch (`git push origin feature/nueva-funcionalidad`)
-5. Crear Pull Request
-
-## 📄 Licencia
-
-Este proyecto es parte del estudio técnico para EPEN (Ente Provincial de Energía del Neuquén).
+### 📝 Licencia
+Proyecto para EDERSA - Ente Distribuidor de Electricidad de Río Negro S.A.
 
 ---
 
-**Contacto**: [Información de contacto]  
-**Última actualización**: Julio 2025
+**Última actualización**: $(date +"%B %Y")
