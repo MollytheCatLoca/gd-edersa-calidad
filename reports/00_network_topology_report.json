@@ -1,0 +1,78 @@
+{
+  "timestamp": "2025-07-15 15:39:06",
+  "resumen_ejecutivo": {
+    "total_alimentadores": 128,
+    "total_transformadores": 2690,
+    "alimentadores_grandes": 13,
+    "alimentadores_problematicos": 66,
+    "extension_promedio_km": Infinity
+  },
+  "hallazgos_clave": {
+    "alimentadores_lineales": 15,
+    "correlacion_tamano_problemas": -0.08121689483937247,
+    "top_5_alimentadores_criticos": [
+      {
+        "alimentador": "5 ALTO VALLE",
+        "num_transformadores": 1,
+        "tasa_problemas": 1.0,
+        "usuarios_totales": 19.0
+      },
+      {
+        "alimentador": "6 ALTO VALLE",
+        "num_transformadores": 1,
+        "tasa_problemas": 1.0,
+        "usuarios_totales": 239.0
+      },
+      {
+        "alimentador": "S2B707",
+        "num_transformadores": 1,
+        "tasa_problemas": 1.0,
+        "usuarios_totales": 307.0
+      },
+      {
+        "alimentador": "STFENELLI",
+        "num_transformadores": 1,
+        "tasa_problemas": 1.0,
+        "usuarios_totales": 147.0
+      },
+      {
+        "alimentador": "PASO CORDOBA",
+        "num_transformadores": 2,
+        "tasa_problemas": 1.0,
+        "usuarios_totales": 23.0
+      }
+    ],
+    "top_5_alimentadores_grandes": [
+      {
+        "alimentador": "LINEA SUR",
+        "num_transformadores": 98,
+        "diametro_km": Infinity,
+        "usuarios_totales": 4687.0
+      },
+      {
+        "alimentador": "RURAL",
+        "num_transformadores": 88,
+        "diametro_km": Infinity,
+        "usuarios_totales": 3956.0
+      },
+      {
+        "alimentador": "NORTE",
+        "num_transformadores": 85,
+        "diametro_km": Infinity,
+        "usuarios_totales": 1143.0
+      },
+      {
+        "alimentador": "LAMARQUE - POMONA",
+        "num_transformadores": 84,
+        "diametro_km": Infinity,
+        "usuarios_totales": 654.0
+      },
+      {
+        "alimentador": "1 CENTRAL CIPOLLETTI",
+        "num_transformadores": 74,
+        "diametro_km": Infinity,
+        "usuarios_totales": 1806.0
+      }
+    ]
+  }
+}

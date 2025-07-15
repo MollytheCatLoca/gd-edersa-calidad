@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-07-15 15:41:59",
+  "resumen_ejecutivo": {
+    "alimentadores_analizados": 105,
+    "patrones_identificados": {
+      "aleatorio": 64,
+      "regular": 23,
+      "lineal": 18
+    },
+    "autocorrelacion_espacial": {
+      "ninguna": 60,
+      "negativa": 17,
+      "positiva": 5
+    },
+    "correlaciones_significativas": 8
+  },
+  "hallazgos_principales": {
+    "alimentadores_lineales": 18,
+    "alimentadores_agrupados": 0,
+    "autocorrelacion_positiva": 5,
+    "interpretacion_correlaciones": {
+      "Mayor distancia = menos problemas": 5,
+      "Mayor distancia = más problemas": 3
+    }
+  },
+  "hotspots_identificados": 240,
+  "ejemplos_patrones": {
+    "mas_lineal": {
+      "alimentador": "RURAL",
+      "r_squared_linealidad": 0.982501003627931,
+      "num_transformadores": 88
+    },
+    "mas_agrupado": {
+      "alimentador": "FERNANDEZ ORO - C",
+      "clustering_coefficient": 0.2,
+      "num_transformadores": 10
+    },
+    "mayor_autocorrelacion": {
+      "alimentador": "VIEDMA 5",
+      "morans_i": 0.19524056728944555,
+      "autocorrelacion_espacial": "positiva"
+    }
+  }
+}

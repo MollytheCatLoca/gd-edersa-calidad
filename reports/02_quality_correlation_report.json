@@ -1,0 +1,89 @@
+{
+  "timestamp": "2025-07-15 15:44:11",
+  "resumen_ejecutivo": {
+    "alimentadores_analizados_independencia": 82,
+    "alimentadores_con_fallas_correlacionadas": 7,
+    "variables_tecnicas_significativas": 5,
+    "alimentadores_problema_sistemico": 54
+  },
+  "hallazgos_principales": {
+    "independencia_fallas": {
+      "Independientes": 75,
+      "Correlacionadas": 5,
+      "Débilmente correlacionadas": 2
+    },
+    "tipos_problemas": {
+      "Sistémico - Calidad degradada": 41,
+      "Aleatorio - Casos aislados": 31,
+      "Parcial - Problemas localizados": 16,
+      "Sistémico - Fallas generalizadas": 13
+    },
+    "variables_tecnicas_criticas": [
+      {
+        "variable": "Potencia",
+        "corr_problemas": 0.3083127484734633,
+        "corr_fallas": 0.18488970929685383
+      },
+      {
+        "variable": "Q_Usuarios",
+        "corr_problemas": 0.3040497282033243,
+        "corr_fallas": 0.2242832968516146
+      },
+      {
+        "variable": "usuarios_por_kva",
+        "corr_problemas": 0.14535022720824756,
+        "corr_fallas": 0.15744303926329162
+      },
+      {
+        "variable": "factor_utilizacion_estimado",
+        "corr_problemas": 0.14597740683208135,
+        "corr_fallas": 0.15775801019001293
+      },
+      {
+        "variable": "num_circuitos",
+        "corr_problemas": 0.2526318821033762,
+        "corr_fallas": 0.2365345296943815
+      }
+    ],
+    "asociaciones_categoricas": {
+      "size_category": {
+        "chi2": 196.96614563508865,
+        "p_value": 8.391839730243626e-40,
+        "asociacion": "Significativa"
+      }
+    }
+  },
+  "recomendaciones_analisis": {
+    "alimentadores_prioritarios": [
+      {
+        "alimentador": "SARMIENTO",
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "tasa_problemas": 0.9090909090909092
+      },
+      {
+        "alimentador": "FERNANDEZ ORO - C",
+        "tipo_problema": "Sistémico - Fallas generalizadas",
+        "tasa_problemas": 0.9
+      },
+      {
+        "alimentador": "FLOR DEL VALLE",
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "tasa_problemas": 0.8421052631578947
+      },
+      {
+        "alimentador": "3 CENTRAL CIPOLLETTI",
+        "tipo_problema": "Sistémico - Fallas generalizadas",
+        "tasa_problemas": 0.8125
+      },
+      {
+        "alimentador": "SAN_JUAN",
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "tasa_problemas": 0.8
+      }
+    ],
+    "patrones_identificados": {
+      "geograficos": 80,
+      "temporales": 126
+    }
+  }
+}

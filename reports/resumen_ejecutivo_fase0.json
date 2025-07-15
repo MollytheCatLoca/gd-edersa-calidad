@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "timestamp": "2025-07-15 15:46:43",
+    "version": "1.0",
+    "fase": "Fase 0 - Caracterización de Red"
+  },
+  "resumen_red": {
+    "total_alimentadores": 128,
+    "total_transformadores": 2690,
+    "total_usuarios": 158476,
+    "capacidad_total_mva": 401.71,
+    "tasa_problemas_global": 0.459,
+    "tasa_fallas_global": 0.206
+  },
+  "hallazgos_principales": {
+    "topologia": {
+      "alimentadores_grandes": 13,
+      "extension_promedio_km": 0.0,
+      "alimentadores_multi_sucursal": 4
+    },
+    "patrones_espaciales": {
+      "alimentadores_lineales": 18,
+      "patron_mas_comun": "aleatorio",
+      "autocorrelacion_positiva": 5,
+      "clustering_promedio": 0.19896036497901662
+    },
+    "problemas_calidad": {
+      "alimentadores_problema_sistemico": 54,
+      "tasa_promedio_problemas": 0.48585191037771885,
+      "alimentadores_criticos": 54
+    }
+  },
+  "alimentadores_criticos_top10": [
+    {
+      "alimentador": "MITRE",
+      "score": 0.6798082869511441,
+      "transformadores": 33,
+      "usuarios": 5793.0,
+      "tasa_problemas": 0.696969696969697,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['GENERAL ROCA']"
+    },
+    {
+      "alimentador": "LINEA SUR",
+      "score": 0.6610913241526543,
+      "transformadores": 98,
+      "usuarios": 4687.0,
+      "tasa_problemas": 0.2959183673469387,
+      "tipo_problema": "Aleatorio - Casos aislados",
+      "sucursales": "['INGENIERO JACOBACCI']"
+    },
+    {
+      "alimentador": "FLOR DEL VALLE",
+      "score": 0.6447205440545212,
+      "transformadores": 19,
+      "usuarios": 4822.0,
+      "tasa_problemas": 0.8421052631578947,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['GENERAL ROCA']"
+    },
+    {
+      "alimentador": "8 CENTRAL CIPOLLETTI",
+      "score": 0.6168937976772555,
+      "transformadores": 33,
+      "usuarios": 4110.0,
+      "tasa_problemas": 0.7575757575757576,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['CIPOLLETTI']"
+    },
+    {
+      "alimentador": "STEFENELLI",
+      "score": 0.6097582389880977,
+      "transformadores": 54,
+      "usuarios": 3290.0,
+      "tasa_problemas": 0.6851851851851852,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['GENERAL ROCA']"
+    },
+    {
+      "alimentador": "ALSINA",
+      "score": 0.605714684597549,
+      "transformadores": 31,
+      "usuarios": 3884.0,
+      "tasa_problemas": 0.7741935483870968,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['GENERAL ROCA']"
+    },
+    {
+      "alimentador": "36",
+      "score": 0.5912753604808054,
+      "transformadores": 24,
+      "usuarios": 3884.0,
+      "tasa_problemas": 0.7916666666666666,
+      "tipo_problema": "Sistémico - Fallas generalizadas",
+      "sucursales": "['VILLA REGINA']"
+    },
+    {
+      "alimentador": "PARQUE INDUSTRIAL 2",
+      "score": 0.5835514008814298,
+      "transformadores": 49,
+      "usuarios": 3170.0,
+      "tasa_problemas": 0.673469387755102,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['GENERAL ROCA']"
+    },
+    {
+      "alimentador": "1 CENTRAL CIPOLLETTI",
+      "score": 0.5741113364180613,
+      "transformadores": 74,
+      "usuarios": 1806.0,
+      "tasa_problemas": 0.6351351351351351,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['CIPOLLETTI']"
+    },
+    {
+      "alimentador": "BARRIO NORTE",
+      "score": 0.5457641324851552,
+      "transformadores": 31,
+      "usuarios": 3723.0,
+      "tasa_problemas": 0.6451612903225806,
+      "tipo_problema": "Sistémico - Calidad degradada",
+      "sucursales": "['ALLEN']"
+    }
+  ],
+  "recomendaciones": {
+    "inmediatas": [
+      "Priorizar intervención en alimentadores con problemas sistémicos identificados",
+      "Implementar monitoreo intensivo en los 10 alimentadores más críticos",
+      "Considerar refuerzo de red en zonas con alta densidad de problemas"
+    ],
+    "planificacion": [
+      "Desarrollar estrategias diferenciadas según patrón espacial de cada alimentador",
+      "Evaluar viabilidad de GD en alimentadores con problemas sistémicos",
+      "Planificar mantenimiento preventivo basado en correlaciones técnicas identificadas"
+    ]
+  },
+  "proximos_pasos": [
+    "Fase 1: Análisis detallado de los 10 alimentadores críticos",
+    "Fase 2: Clustering para identificación de zonas óptimas para GD",
+    "Fase 3: Dimensionamiento preliminar de soluciones"
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "timestamp": "2025-07-15 15:46:43",
+  "fase": "Fase 0 - Caracterización de Red Completada",
+  "archivos_generados": {
+    "datos_procesados": [
+      "alimentadores_caracterizados.csv",
+      "transformadores_con_topologia.csv",
+      "patrones_espaciales_alimentadores.csv",
+      "correlacion_distancia_calidad.csv",
+      "clusters_espaciales_problemas.csv",
+      "tests_independencia_fallas.csv",
+      "patrones_temporales.csv",
+      "problemas_sistemicos.csv"
+    ],
+    "reportes": [
+      "00_network_topology_report.json",
+      "01_spatial_correlation_report.json",
+      "02_quality_correlation_report.json",
+      "resumen_ejecutivo_fase0.json",
+      "resumen_ejecutivo_fase0.md"
+    ],
+    "visualizaciones": [
+      "network_topology_analysis.png",
+      "spatial_patterns_feeders.png",
+      "spatial_patterns_summary.png",
+      "quality_correlations.png",
+      "caracterizacion_red_edersa.pdf"
+    ]
+  },
+  "resumen_hallazgos": {
+    "topologia_red": {
+      "total_alimentadores": 128,
+      "alimentadores_grandes": 13,
+      "extension_promedio_km": 0.0,
+      "densidad_promedio": 3.9532580689834456,
+      "alimentadores_multi_sucursal": 4
+    },
+    "patrones_espaciales": {
+      "alimentadores_lineales": 18,
+      "patron_mas_comun": "aleatorio",
+      "autocorrelacion_positiva": 5,
+      "clustering_promedio": 0.19896036497901662
+    },
+    "correlaciones_calidad": {
+      "alimentadores_problema_sistemico": 54,
+      "tasa_promedio_problemas": 0.48585191037771885,
+      "alimentadores_criticos": 54
+    },
+    "alimentadores_criticos": [
+      {
+        "alimentador": "MITRE",
+        "score": 0.6798082869511441,
+        "transformadores": 33,
+        "usuarios": 5793.0,
+        "tasa_problemas": 0.696969696969697,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['GENERAL ROCA']"
+      },
+      {
+        "alimentador": "LINEA SUR",
+        "score": 0.6610913241526543,
+        "transformadores": 98,
+        "usuarios": 4687.0,
+        "tasa_problemas": 0.2959183673469387,
+        "tipo_problema": "Aleatorio - Casos aislados",
+        "sucursales": "['INGENIERO JACOBACCI']"
+      },
+      {
+        "alimentador": "FLOR DEL VALLE",
+        "score": 0.6447205440545212,
+        "transformadores": 19,
+        "usuarios": 4822.0,
+        "tasa_problemas": 0.8421052631578947,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['GENERAL ROCA']"
+      },
+      {
+        "alimentador": "8 CENTRAL CIPOLLETTI",
+        "score": 0.6168937976772555,
+        "transformadores": 33,
+        "usuarios": 4110.0,
+        "tasa_problemas": 0.7575757575757576,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['CIPOLLETTI']"
+      },
+      {
+        "alimentador": "STEFENELLI",
+        "score": 0.6097582389880977,
+        "transformadores": 54,
+        "usuarios": 3290.0,
+        "tasa_problemas": 0.6851851851851852,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['GENERAL ROCA']"
+      },
+      {
+        "alimentador": "ALSINA",
+        "score": 0.605714684597549,
+        "transformadores": 31,
+        "usuarios": 3884.0,
+        "tasa_problemas": 0.7741935483870968,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['GENERAL ROCA']"
+      },
+      {
+        "alimentador": "36",
+        "score": 0.5912753604808054,
+        "transformadores": 24,
+        "usuarios": 3884.0,
+        "tasa_problemas": 0.7916666666666666,
+        "tipo_problema": "Sistémico - Fallas generalizadas",
+        "sucursales": "['VILLA REGINA']"
+      },
+      {
+        "alimentador": "PARQUE INDUSTRIAL 2",
+        "score": 0.5835514008814298,
+        "transformadores": 49,
+        "usuarios": 3170.0,
+        "tasa_problemas": 0.673469387755102,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['GENERAL ROCA']"
+      },
+      {
+        "alimentador": "1 CENTRAL CIPOLLETTI",
+        "score": 0.5741113364180613,
+        "transformadores": 74,
+        "usuarios": 1806.0,
+        "tasa_problemas": 0.6351351351351351,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['CIPOLLETTI']"
+      },
+      {
+        "alimentador": "BARRIO NORTE",
+        "score": 0.5457641324851552,
+        "transformadores": 31,
+        "usuarios": 3723.0,
+        "tasa_problemas": 0.6451612903225806,
+        "tipo_problema": "Sistémico - Calidad degradada",
+        "sucursales": "['ALLEN']"
+      }
+    ]
+  },
+  "siguiente_fase": "Fase 1 - Análisis detallado de alimentadores críticos"
+}
