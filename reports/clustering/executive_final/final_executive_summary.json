@@ -1,0 +1,23 @@
+{
+  "key_metrics": {
+    "total_gd_mw": 120.48,
+    "total_users": 158476,
+    "total_investment_musd": 145,
+    "annual_benefits_musd": 15,
+    "avg_ias_v3": 0.467,
+    "clusters_analyzed": 15
+  },
+  "main_findings": [
+    "Q at Night capability transforms residential clusters into valuable assets",
+    "Land availability is the primary constraint for 67% of clusters",
+    "24h operation mode provides optimal ROI for 10 of 15 clusters",
+    "Average power factor improvement from 0.85 to 0.93"
+  ],
+  "strategic_recommendations": [
+    "Prioritize mixed/residential clusters with high Q at Night potential",
+    "Specify inverters with certified STATCOM capability",
+    "Negotiate ancillary services compensation with CAMMESA",
+    "Implement DERMS for coordinated 120 MW management",
+    "Validate land availability for top 5 clusters immediately"
+  ]
+}

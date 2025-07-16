@@ -1,0 +1,152 @@
+{
+  "optimization_summary": {
+    "timestamp": "2025-07-16T10:09:10.604860",
+    "total_configurations_tested": 158,
+    "optimal_method": "HDBSCAN",
+    "optimal_params": {
+      "min_cluster_size": 40,
+      "min_samples": 11
+    },
+    "optimal_clusters": 10,
+    "optimal_score": 0.3983800006047615
+  },
+  "method_comparison": {
+    "DBSCAN": {
+      "configurations_tested": 69,
+      "best_silhouette": 0.9966092361455597,
+      "avg_clusters": 24.55072463768116,
+      "avg_noise_ratio": 0.4701764030591622
+    },
+    "KMeans": {
+      "configurations_tested": 25,
+      "best_silhouette": 0.6469847657828166,
+      "avg_clusters": 17.0,
+      "avg_noise_ratio": 0.0
+    },
+    "Hierarchical": {
+      "configurations_tested": 24,
+      "best_silhouette": 0.5835186663196326,
+      "avg_clusters": 17.0,
+      "avg_noise_ratio": 0.0
+    },
+    "HDBSCAN": {
+      "configurations_tested": 40,
+      "best_silhouette": 0.6371049443402268,
+      "avg_clusters": 16.15,
+      "avg_noise_ratio": 0.12479546299739681
+    }
+  },
+  "final_clustering": {
+    "total_transformers": 2689,
+    "total_clusters": 10,
+    "noise_points": 290,
+    "noise_percentage": 10.784678319077724,
+    "cluster_statistics": [
+      {
+        "cluster_id": 0,
+        "size": 43,
+        "ias_mean": 0.6445849040309136,
+        "ias_std": 0.02875915600343108,
+        "users_total": 7207,
+        "power_mva": 6.735,
+        "failure_rate": 0.3488372093023256,
+        "dominant_profile": "Comercial"
+      },
+      {
+        "cluster_id": 1,
+        "size": 103,
+        "ias_mean": 0.6411428253105499,
+        "ias_std": 0.050026455299082104,
+        "users_total": 21561,
+        "power_mva": 32.955,
+        "failure_rate": 0.1650485436893204,
+        "dominant_profile": "Comercial"
+      },
+      {
+        "cluster_id": 2,
+        "size": 112,
+        "ias_mean": 0.36518034019159007,
+        "ias_std": 0.030391495422797173,
+        "users_total": 3691,
+        "power_mva": 12.734,
+        "failure_rate": 0.16964285714285715,
+        "dominant_profile": "Mixto"
+      },
+      {
+        "cluster_id": 3,
+        "size": 370,
+        "ias_mean": 0.6505182058553085,
+        "ias_std": 0.04880731037173738,
+        "users_total": 76415,
+        "power_mva": 122.22,
+        "failure_rate": 0.3837837837837838,
+        "dominant_profile": "Comercial"
+      },
+      {
+        "cluster_id": 4,
+        "size": 225,
+        "ias_mean": 0.3514426231132713,
+        "ias_std": 0.025065490617628968,
+        "users_total": 2602,
+        "power_mva": 9.888,
+        "failure_rate": 0.10222222222222223,
+        "dominant_profile": "Mixto"
+      },
+      {
+        "cluster_id": 5,
+        "size": 83,
+        "ias_mean": 0.372118176484797,
+        "ias_std": 0.028889577964592406,
+        "users_total": 2707,
+        "power_mva": 13.842,
+        "failure_rate": 0.10843373493975904,
+        "dominant_profile": "Mixto"
+      },
+      {
+        "cluster_id": 6,
+        "size": 67,
+        "ias_mean": 0.3331351156353712,
+        "ias_std": 0.002655926171236647,
+        "users_total": 158,
+        "power_mva": 1.085,
+        "failure_rate": 0.0,
+        "dominant_profile": "Mixto"
+      },
+      {
+        "cluster_id": 7,
+        "size": 216,
+        "ias_mean": 0.35033443065540487,
+        "ias_std": 0.026039730164027795,
+        "users_total": 3330,
+        "power_mva": 17.127,
+        "failure_rate": 0.08796296296296297,
+        "dominant_profile": "Mixto"
+      },
+      {
+        "cluster_id": 8,
+        "size": 963,
+        "ias_mean": 0.37394100072992337,
+        "ias_std": 0.030423155158632892,
+        "users_total": 23019,
+        "power_mva": 129.786,
+        "failure_rate": 0.20249221183800623,
+        "dominant_profile": "Mixto"
+      },
+      {
+        "cluster_id": 9,
+        "size": 217,
+        "ias_mean": 0.3497404645110896,
+        "ias_std": 0.01959809835861805,
+        "users_total": 1964,
+        "power_mva": 14.266,
+        "failure_rate": 0.06451612903225806,
+        "dominant_profile": "Mixto"
+      }
+    ]
+  },
+  "quality_metrics": {
+    "silhouette_score": 0.6326658819015638,
+    "calinski_harabasz_score": 5323.084828875238,
+    "davies_bouldin_score": 0.5118058273087831
+  }
+}

@@ -47,6 +47,30 @@ def create_sidebar():
                 html.I(className="fas fa-map-marked-alt me-2"),
                 "Clustering y GD"
             ], href="/clustering", active="exact", className="mb-1"),
+            
+            # Nuevas páginas de Fase 2.5
+            html.Hr(className="my-2"),
+            html.Small("FASE 2.5 - Análisis Avanzado", className="text-muted text-uppercase d-block px-3 mb-2"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-sun me-2"),
+                "IAS 3.0 Analysis"
+            ], href="/ias-v3", active="exact", className="mb-1"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-map me-2"),
+                "Land Availability"
+            ], href="/land-availability", active="exact", className="mb-1"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-clock me-2"),
+                "24h Benefits"
+            ], href="/benefits-24h", active="exact", className="mb-1"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-chart-line me-2"),
+                "Executive Summary"
+            ], href="/executive-summary", active="exact", className="mb-1"),
         ], vertical=True, pills=True, className="px-3"),
         
         html.Hr(className="my-4"),
@@ -125,8 +149,8 @@ def create_sidebar():
         # Información adicional
         html.Div([
             html.Small([
-                html.I(className="fas fa-info-circle me-1"),
-                "Fase 0 Completada"
+                html.I(className="fas fa-check-circle me-1"),
+                "Fase 0 & 2.5 Completadas"
             ], className="text-muted"),
             html.Br(),
             html.Small([
@@ -135,8 +159,13 @@ def create_sidebar():
             ], className="text-muted"),
             html.Br(),
             html.Small([
-                html.I(className="fas fa-network-wired me-1"),
-                "128 Alimentadores"
+                html.I(className="fas fa-solar-panel me-1"),
+                "120.5 MW GD Identificados"
+            ], className="text-muted"),
+            html.Br(),
+            html.Small([
+                html.I(className="fas fa-users me-1"),
+                "158,476 Usuarios Beneficiados"
             ], className="text-muted")
         ], className="px-3 mb-3")
     ])

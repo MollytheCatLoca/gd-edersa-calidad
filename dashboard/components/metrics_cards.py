@@ -5,18 +5,35 @@ Componentes de tarjetas de métricas reutilizables
 import dash_bootstrap_components as dbc
 from dash import html
 
-def create_metric_card(title, value, icon, color="primary", subtitle=None, trend=None):
+def create_metric_card(title, value, subtitle_or_icon=None, color="primary", subtitle=None, icon=None, trend=None):
     """
     Crea una tarjeta de métrica con ícono y valor
     
     Args:
         title: Título de la métrica
         value: Valor principal a mostrar
-        icon: Clase de ícono FontAwesome
+        subtitle_or_icon: Puede ser subtitle (string normal) o icon (string con "fa-")
         color: Color del tema (primary, success, warning, danger, info)
-        subtitle: Texto adicional debajo del valor
+        subtitle: Texto adicional debajo del valor (explícito)
+        icon: Clase de ícono FontAwesome (explícito)
         trend: Dict con 'value' y 'direction' ('up' o 'down')
     """
+    # Determinar si el tercer argumento es subtitle o icon
+    if subtitle_or_icon:
+        if isinstance(subtitle_or_icon, str) and ("fa-" in subtitle_or_icon or "fas " in subtitle_or_icon):
+            # Es un ícono
+            if not icon:
+                icon = subtitle_or_icon
+        else:
+            # Es un subtitle
+            if not subtitle:
+                subtitle = subtitle_or_icon
+    
+    # Valores por defecto
+    if not icon:
+        icon = "fas fa-chart-line"
+    if not subtitle:
+        subtitle = ""
     # Colores de gradiente según el tema
     gradients = {
         "primary": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
@@ -26,17 +43,16 @@ def create_metric_card(title, value, icon, color="primary", subtitle=None, trend
         "info": "linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)"
     }
     
-    card_content = [
-        html.Div([
-            html.I(className=f"{icon} fa-2x mb-3", style={"opacity": "0.8"}),
-            html.H2(value, className="metric-value mb-1"),
-            html.P(title, className="metric-label mb-0"),
-        ], className="text-center text-white")
+    # Construir contenido de la card
+    children_list = [
+        html.I(className=f"{icon} fa-2x mb-3", style={"opacity": "0.8"}),
+        html.H2(value, className="metric-value mb-1"),
+        html.P(title, className="metric-label mb-0"),
     ]
     
     # Agregar subtítulo si existe
     if subtitle:
-        card_content[0].children.append(
+        children_list.append(
             html.Small(subtitle, className="d-block mt-2", style={"opacity": "0.9"})
         )
     
@@ -44,7 +60,7 @@ def create_metric_card(title, value, icon, color="primary", subtitle=None, trend
     if trend:
         trend_icon = "fa-arrow-up" if trend['direction'] == 'up' else "fa-arrow-down"
         trend_color = "text-success" if trend['direction'] == 'up' else "text-danger"
-        card_content[0].children.append(
+        children_list.append(
             html.Div([
                 html.I(className=f"fas {trend_icon} me-1"),
                 html.Span(trend['value'])
@@ -52,7 +68,9 @@ def create_metric_card(title, value, icon, color="primary", subtitle=None, trend
         )
     
     return dbc.Card(
-        card_content,
+        dbc.CardBody(
+            html.Div(children_list, className="text-center text-white")
+        ),
         style={
             "background": gradients.get(color, gradients["primary"]),
             "border": "none",
@@ -133,15 +151,15 @@ def create_progress_card(title, items, icon="fas fa-tasks"):
         icon
     )
 
-def create_alert_card(message, color="warning", icon=None, dismissable=True):
+def create_alert_card(message, *, color="warning", icon=None, dismissable=True):
     """
     Crea una tarjeta de alerta
     
     Args:
         message: Mensaje de la alerta
-        color: Color del tema
-        icon: Ícono opcional
-        dismissable: Si se puede cerrar
+        color: Color del tema (keyword-only)
+        icon: Ícono opcional (keyword-only)
+        dismissable: Si se puede cerrar (keyword-only)
     """
     content = []
     if icon:

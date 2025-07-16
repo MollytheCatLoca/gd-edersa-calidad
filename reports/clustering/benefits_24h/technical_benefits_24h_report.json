@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "avg_voltage_improvement_24h": 4.42,
+    "avg_loss_reduction_24h": 0.49,
+    "avg_power_factor_improvement": 0.081,
+    "total_energy_value_gwh_year": 216.9
+  },
+  "economic_benefits": {
+    "energy_displacement_value_musd": 9.0,
+    "reactive_support_value_musd": 3.0,
+    "loss_reduction_savings_musd": 1.5,
+    "total_annual_benefits_musd": 15.0
+  }
+}

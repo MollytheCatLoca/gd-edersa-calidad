@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_62dce807176b5f2c18719a06841069cd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; right: 10px; width: 200px; height: 120px; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid grey; border-radius: 5px">
+    <p style="margin: 10px;"><b>Factibilidad de Terreno</b></p>
+    <p style="margin: 10px;"><span style="color:green;">●</span> Alta (>0.8)</p>
+    <p style="margin: 10px;"><span style="color:yellow;">●</span> Media (0.5-0.8)</p>
+    <p style="margin: 10px;"><span style="color:orange;">●</span> Baja (0.2-0.5)</p>
+    <p style="margin: 10px;"><span style="color:red;">●</span> Muy Baja (<0.2)</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_62dce807176b5f2c18719a06841069cd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_62dce807176b5f2c18719a06841069cd = L.map(
+                "map_62dce807176b5f2c18719a06841069cd",
+                {
+                    center: [-40.10826454399842, -67.30075973581398],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_233efe26520c466e6322931a7779a73c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_233efe26520c466e6322931a7779a73c.addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+            var circle_053500a089c42ad77dcb8c5a106de28b = L.circle(
+                [-38.92195382172702, -67.71134698328692],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3565.2000000000003, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_95bb156e7260bc053d90fe443f0f9b15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_488e8039be432b4adaccb1d002a5a7d2 = $(`<div id="html_488e8039be432b4adaccb1d002a5a7d2" style="width: 100.0%; height: 100.0%;">             <b>Cluster 3</b><br>             <b>Capacidad:</b> 35.7 MW<br>             <b>Hectáreas:</b> 35.7 ha<br>             <b>Zona:</b> urbana_media<br>             <b>Score C7:</b> 0.036<br>             <b>Factibilidad:</b> Muy Baja<br>             <b>Alternativas:</b> Considerar múltiples sitios menores; Solar distribuido en techos industriales/comerciales             </div>`)[0];
+                popup_95bb156e7260bc053d90fe443f0f9b15.setContent(html_488e8039be432b4adaccb1d002a5a7d2);
+            
+        
+
+        circle_053500a089c42ad77dcb8c5a106de28b.bindPopup(popup_95bb156e7260bc053d90fe443f0f9b15)
+        ;
+
+        
+    
+    
+            var circle_ff43209535c7acd640c123124e1dd519 = L.circle(
+                [-39.01927755681818, -67.5752764280303],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2196.06, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_deaf7d1380e9ac01d3393168180dd7d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_822e092e22202a1264d6b7fb7dd7341d = $(`<div id="html_822e092e22202a1264d6b7fb7dd7341d" style="width: 100.0%; height: 100.0%;">             <b>Cluster 0</b><br>             <b>Capacidad:</b> 22.0 MW<br>             <b>Hectáreas:</b> 22.0 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.173<br>             <b>Factibilidad:</b> Muy Baja<br>             <b>Alternativas:</b> Dividir en 2-3 parques menores; Asociación público-privada para terrenos             </div>`)[0];
+                popup_deaf7d1380e9ac01d3393168180dd7d6.setContent(html_822e092e22202a1264d6b7fb7dd7341d);
+            
+        
+
+        circle_ff43209535c7acd640c123124e1dd519.bindPopup(popup_deaf7d1380e9ac01d3393168180dd7d6)
+        ;
+
+        
+    
+    
+            var circle_340054440a303044656612f89ebc45b0 = L.circle(
+                [-40.824300281690135, -63.01125735211268],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 646.35, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_d614270ef20e3a27d1ce988b6b6e76be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_931cefece8baa467f12534c0b8d33c2f = $(`<div id="html_931cefece8baa467f12534c0b8d33c2f" style="width: 100.0%; height: 100.0%;">             <b>Cluster 13</b><br>             <b>Capacidad:</b> 6.5 MW<br>             <b>Hectáreas:</b> 6.5 ha<br>             <b>Zona:</b> urbana_media<br>             <b>Score C7:</b> 0.201<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b> Considerar múltiples sitios menores; Solar distribuido en techos industriales/comerciales             </div>`)[0];
+                popup_d614270ef20e3a27d1ce988b6b6e76be.setContent(html_931cefece8baa467f12534c0b8d33c2f);
+            
+        
+
+        circle_340054440a303044656612f89ebc45b0.bindPopup(popup_d614270ef20e3a27d1ce988b6b6e76be)
+        ;
+
+        
+    
+    
+            var circle_69056c10ff7727dd5de63193347d330f = L.circle(
+                [-40.734416531914896, -65.6636104893617],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 407.55, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_95ef4daacc24d4943297fe575b8a4332 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e569f222017793af984a5d6168801cb7 = $(`<div id="html_e569f222017793af984a5d6168801cb7" style="width: 100.0%; height: 100.0%;">             <b>Cluster 10</b><br>             <b>Capacidad:</b> 4.1 MW<br>             <b>Hectáreas:</b> 4.1 ha<br>             <b>Zona:</b> urbana_media<br>             <b>Score C7:</b> 0.255<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_95ef4daacc24d4943297fe575b8a4332.setContent(html_e569f222017793af984a5d6168801cb7);
+            
+        
+
+        circle_69056c10ff7727dd5de63193347d330f.bindPopup(popup_95ef4daacc24d4943297fe575b8a4332)
+        ;
+
+        
+    
+    
+            var circle_e1bf85ccfffcd70c7a292efb5ca7cdf5 = L.circle(
+                [-41.66972483783784, -70.70282486486488],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 178.65, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_5c6e6aca3e0378a7f2f98bf5764e2308 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b78c24f0b5cfa0988dcbf32956730988 = $(`<div id="html_b78c24f0b5cfa0988dcbf32956730988" style="width: 100.0%; height: 100.0%;">             <b>Cluster 7</b><br>             <b>Capacidad:</b> 1.8 MW<br>             <b>Hectáreas:</b> 1.8 ha<br>             <b>Zona:</b> urbana_media<br>             <b>Score C7:</b> 0.401<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_5c6e6aca3e0378a7f2f98bf5764e2308.setContent(html_b78c24f0b5cfa0988dcbf32956730988);
+            
+        
+
+        circle_e1bf85ccfffcd70c7a292efb5ca7cdf5.bindPopup(popup_5c6e6aca3e0378a7f2f98bf5764e2308)
+        ;
+
+        
+    
+    
+            var circle_b83516b297517e10d8b5d6dce9915866 = L.circle(
+                [-39.31766230769232, -65.82279871794871],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 298.8, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_6749bdfe85e861494ff6451415c4e724 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc3bc094f3cc2b113023de3d0a6d3086 = $(`<div id="html_cc3bc094f3cc2b113023de3d0a6d3086" style="width: 100.0%; height: 100.0%;">             <b>Cluster 5</b><br>             <b>Capacidad:</b> 3.0 MW<br>             <b>Hectáreas:</b> 3.0 ha<br>             <b>Zona:</b> urbana_media<br>             <b>Score C7:</b> 0.281<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_6749bdfe85e861494ff6451415c4e724.setContent(html_cc3bc094f3cc2b113023de3d0a6d3086);
+            
+        
+
+        circle_b83516b297517e10d8b5d6dce9915866.bindPopup(popup_6749bdfe85e861494ff6451415c4e724)
+        ;
+
+        
+    
+    
+            var circle_4b15a7529e87dbfc009991a10eac88f6 = L.circle(
+                [-38.91391786544342, -67.93272047094801],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1269.72, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_2d5cf25592758760ab942b00524c0890 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_360f8f6ea60f2c6d99296b5576f8dbde = $(`<div id="html_360f8f6ea60f2c6d99296b5576f8dbde" style="width: 100.0%; height: 100.0%;">             <b>Cluster 4</b><br>             <b>Capacidad:</b> 12.7 MW<br>             <b>Hectáreas:</b> 12.7 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.297<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_2d5cf25592758760ab942b00524c0890.setContent(html_360f8f6ea60f2c6d99296b5576f8dbde);
+            
+        
+
+        circle_4b15a7529e87dbfc009991a10eac88f6.bindPopup(popup_2d5cf25592758760ab942b00524c0890)
+        ;
+
+        
+    
+    
+            var circle_151f7977730852381f9eec198ca195fd = L.circle(
+                [-41.828262942857144, -71.35920935714287],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 156.92999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_b6dd3a25ca66ea2532f93c1aeb066a1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4d5f9f15412e833b2a598bfded25a3b = $(`<div id="html_a4d5f9f15412e833b2a598bfded25a3b" style="width: 100.0%; height: 100.0%;">             <b>Cluster 1</b><br>             <b>Capacidad:</b> 1.6 MW<br>             <b>Hectáreas:</b> 1.6 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.626<br>             <b>Factibilidad:</b> Media<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_b6dd3a25ca66ea2532f93c1aeb066a1e.setContent(html_a4d5f9f15412e833b2a598bfded25a3b);
+            
+        
+
+        circle_151f7977730852381f9eec198ca195fd.bindPopup(popup_b6dd3a25ca66ea2532f93c1aeb066a1e)
+        ;
+
+        
+    
+    
+            var circle_4392db550696fecff181717282b79446 = L.circle(
+                [-40.63377724338624, -64.87320374603173],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 564.6899999999999, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_c22c4f57e53d399b99b3be646e18c8c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f93fc0a7a5ada0d6059b54e42b8c81a0 = $(`<div id="html_f93fc0a7a5ada0d6059b54e42b8c81a0" style="width: 100.0%; height: 100.0%;">             <b>Cluster 11</b><br>             <b>Capacidad:</b> 5.6 MW<br>             <b>Hectáreas:</b> 5.6 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.391<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_c22c4f57e53d399b99b3be646e18c8c7.setContent(html_f93fc0a7a5ada0d6059b54e42b8c81a0);
+            
+        
+
+        circle_4392db550696fecff181717282b79446.bindPopup(popup_c22c4f57e53d399b99b3be646e18c8c7)
+        ;
+
+        
+    
+    
+            var circle_dc351786259c2a705a2758072446b13e = L.circle(
+                [-37.84926633035714, -67.83542506250001],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 382.02, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_cc08fdfd36f881d0455172b50458be2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_55858fe75ec36324d1650d5da2716e76 = $(`<div id="html_55858fe75ec36324d1650d5da2716e76" style="width: 100.0%; height: 100.0%;">             <b>Cluster 8</b><br>             <b>Capacidad:</b> 3.8 MW<br>             <b>Hectáreas:</b> 3.8 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.479<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_cc08fdfd36f881d0455172b50458be2f.setContent(html_55858fe75ec36324d1650d5da2716e76);
+            
+        
+
+        circle_dc351786259c2a705a2758072446b13e.bindPopup(popup_cc08fdfd36f881d0455172b50458be2f)
+        ;
+
+        
+    
+    
+            var circle_d6ea571a006451ad8efd7696623326c1 = L.circle(
+                [-40.78247057142857, -63.16858242142857],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 677.8499999999999, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_f19a081d7095372444ca61ef4f72cc19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a0666be7298af0bd444574da53cbb36 = $(`<div id="html_3a0666be7298af0bd444574da53cbb36" style="width: 100.0%; height: 100.0%;">             <b>Cluster 2</b><br>             <b>Capacidad:</b> 6.8 MW<br>             <b>Hectáreas:</b> 6.8 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.376<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_f19a081d7095372444ca61ef4f72cc19.setContent(html_3a0666be7298af0bd444574da53cbb36);
+            
+        
+
+        circle_d6ea571a006451ad8efd7696623326c1.bindPopup(popup_f19a081d7095372444ca61ef4f72cc19)
+        ;
+
+        
+    
+    
+            var circle_30fa526c5306a3a2ab83c8cfc2391d8c = L.circle(
+                [-39.30756299256505, -65.83500957992565],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 684.84, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_e68d6e263cf352dad7156a2629ae2f6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8682cd5619e55a6a09ed4c3a55d3026d = $(`<div id="html_8682cd5619e55a6a09ed4c3a55d3026d" style="width: 100.0%; height: 100.0%;">             <b>Cluster 6</b><br>             <b>Capacidad:</b> 6.8 MW<br>             <b>Hectáreas:</b> 6.8 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.375<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_e68d6e263cf352dad7156a2629ae2f6c.setContent(html_8682cd5619e55a6a09ed4c3a55d3026d);
+            
+        
+
+        circle_30fa526c5306a3a2ab83c8cfc2391d8c.bindPopup(popup_e68d6e263cf352dad7156a2629ae2f6c)
+        ;
+
+        
+    
+    
+            var circle_21f11c38263bfcf87104c3db80d31072 = L.circle(
+                [-41.014314322222226, -68.9701245888889],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 132.95999999999998, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_cb4a579d8ea6908c848a475f9d9551c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50e847abeec505d80e2353f5b1019dca = $(`<div id="html_50e847abeec505d80e2353f5b1019dca" style="width: 100.0%; height: 100.0%;">             <b>Cluster 9</b><br>             <b>Capacidad:</b> 1.3 MW<br>             <b>Hectáreas:</b> 1.3 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.640<br>             <b>Factibilidad:</b> Media<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_cb4a579d8ea6908c848a475f9d9551c5.setContent(html_50e847abeec505d80e2353f5b1019dca);
+            
+        
+
+        circle_21f11c38263bfcf87104c3db80d31072.bindPopup(popup_cb4a579d8ea6908c848a475f9d9551c5)
+        ;
+
+        
+    
+    
+            var circle_6d6dab4fd16d63df502a69c23e362ec9 = L.circle(
+                [-39.023417661728395, -67.53752799012346],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 793.56, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_a5014d474a361047ef1bb7c562fdf276 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_015216df606afb1444158bcc7cbf30fc = $(`<div id="html_015216df606afb1444158bcc7cbf30fc" style="width: 100.0%; height: 100.0%;">             <b>Cluster 12</b><br>             <b>Capacidad:</b> 7.9 MW<br>             <b>Hectáreas:</b> 7.9 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.361<br>             <b>Factibilidad:</b> Baja<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_a5014d474a361047ef1bb7c562fdf276.setContent(html_015216df606afb1444158bcc7cbf30fc);
+            
+        
+
+        circle_6d6dab4fd16d63df502a69c23e362ec9.bindPopup(popup_a5014d474a361047ef1bb7c562fdf276)
+        ;
+
+        
+    
+    
+            var circle_0a614fd3c230a4cafbea9960e7f2b8fc = L.circle(
+                [-41.78364289230769, -71.51247798461537],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.5, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 93.15, "stroke": true, "weight": 3}
+            ).addTo(map_62dce807176b5f2c18719a06841069cd);
+        
+    
+        var popup_46d906c7e0f29ef1f5c344b567e04d31 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe5224b32b39c0724dfe5c1ccf7d0c42 = $(`<div id="html_fe5224b32b39c0724dfe5c1ccf7d0c42" style="width: 100.0%; height: 100.0%;">             <b>Cluster 14</b><br>             <b>Capacidad:</b> 0.9 MW<br>             <b>Hectáreas:</b> 0.9 ha<br>             <b>Zona:</b> periurbana<br>             <b>Score C7:</b> 0.664<br>             <b>Factibilidad:</b> Media<br>             <b>Alternativas:</b>              </div>`)[0];
+                popup_46d906c7e0f29ef1f5c344b567e04d31.setContent(html_fe5224b32b39c0724dfe5c1ccf7d0c42);
+            
+        
+
+        circle_0a614fd3c230a4cafbea9960e7f2b8fc.bindPopup(popup_46d906c7e0f29ef1f5c344b567e04d31)
+        ;
+
+        
+    
+</script>
+</html>

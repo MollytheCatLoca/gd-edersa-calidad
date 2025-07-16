@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "total_hectares_required": 120.5,
+    "average_c7_score": 0.371,
+    "clusters_high_feasibility": 0,
+    "clusters_low_feasibility": 12
+  },
+  "by_zone_type": {
+    "rural": {
+      "n_clusters": 2,
+      "total_hectares": 20,
+      "avg_c7_score": 0.8
+    },
+    "periurbana": {
+      "n_clusters": 5,
+      "total_hectares": 40,
+      "avg_c7_score": 0.5
+    },
+    "urbana_media": {
+      "n_clusters": 6,
+      "total_hectares": 50,
+      "avg_c7_score": 0.3
+    },
+    "urbana_densa": {
+      "n_clusters": 2,
+      "total_hectares": 10.5,
+      "avg_c7_score": 0.1
+    }
+  }
+}

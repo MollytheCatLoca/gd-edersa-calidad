@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "analysis_date": "2025-07-16T13:39:55.445910",
+    "methodology": "Clustering Refinement for IAS 3.0",
+    "algorithms_tested": [
+      "KMeans"
+    ],
+    "total_configurations": 9
+  },
+  "best_configuration": {
+    "algorithm": "KMeans",
+    "parameters": {
+      "n_clusters": 17
+    },
+    "n_clusters": 17,
+    "metrics": {
+      "silhouette": 0.5145879721286852,
+      "davies_bouldin": 0.8040303249754208,
+      "calinski_harabasz": 1797.0315063310234,
+      "composite_score": 1.0
+    }
+  },
+  "cluster_summary": {
+    "total_clusters": 17,
+    "avg_ias_potential": 0.3078235294117646,
+    "high_potential_clusters": 0,
+    "total_gd_potential_mw": 120.49000000000001
+  },
+  "top_10_clusters": [
+    {
+      "cluster_id": 8,
+      "ias_potential": 0.5,
+      "n_transformers": 42,
+      "potencia_mva": 6.64,
+      "usuarios": 7076,
+      "gd_mw": 1.99,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno"
+      ]
+    },
+    {
+      "cluster_id": 10,
+      "ias_potential": 0.5,
+      "n_transformers": 92,
+      "potencia_mva": 18.23,
+      "usuarios": 14203,
+      "gd_mw": 5.47,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "ias_potential": 0.5,
+      "n_transformers": 59,
+      "potencia_mva": 25.25,
+      "usuarios": 15269,
+      "gd_mw": 7.57,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno"
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "ias_potential": 0.5,
+      "n_transformers": 50,
+      "potencia_mva": 21.99,
+      "usuarios": 17926,
+      "gd_mw": 6.6,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno"
+      ]
+    },
+    {
+      "cluster_id": 12,
+      "ias_potential": 0.5,
+      "n_transformers": 47,
+      "potencia_mva": 7.75,
+      "usuarios": 6455,
+      "gd_mw": 2.32,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno"
+      ]
+    },
+    {
+      "cluster_id": 13,
+      "ias_potential": 0.429,
+      "n_transformers": 36,
+      "potencia_mva": 23.53,
+      "usuarios": 2080,
+      "gd_mw": 7.06,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno",
+        "Restricciones de terreno"
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "ias_potential": 0.405,
+      "n_transformers": 122,
+      "potencia_mva": 22.8,
+      "usuarios": 16221,
+      "gd_mw": 6.84,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno",
+        "Restricciones de terreno"
+      ]
+    },
+    {
+      "cluster_id": 14,
+      "ias_potential": 0.401,
+      "n_transformers": 99,
+      "potencia_mva": 39.75,
+      "usuarios": 28293,
+      "gd_mw": 11.92,
+      "strengths": [
+        "Excelente coincidencia solar-demanda"
+      ],
+      "weaknesses": [
+        "Limitado beneficio nocturno",
+        "Restricciones de terreno"
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "ias_potential": 0.202,
+      "n_transformers": 271,
+      "potencia_mva": 11.26,
+      "usuarios": 3361,
+      "gd_mw": 3.38,
+      "strengths": [],
+      "weaknesses": [
+        "Baja coincidencia solar",
+        "Limitado beneficio nocturno"
+      ]
+    },
+    {
+      "cluster_id": 11,
+      "ias_potential": 0.202,
+      "n_transformers": 363,
+      "potencia_mva": 11.55,
+      "usuarios": 2342,
+      "gd_mw": 3.47,
+      "strengths": [],
+      "weaknesses": [
+        "Baja coincidencia solar",
+        "Limitado beneficio nocturno"
+      ]
+    }
+  ],
+  "component_analysis": {
+    "solar_diurno_weight": 0.3,
+    "q_nocturno_weight": 0.3,
+    "terreno_weight": 0.2,
+    "criticidad_weight": 0.2
+  },
+  "recommendations": [
+    "Priorizar 0 clusters con potencial IAS > 0.6",
+    "Implementar estrategia diferenciada: solar+tracker en clusters comerciales, STATCOM nocturno en residenciales",
+    "Potencial total identificado: 120.5 MW distribuidos en 17 clusters",
+    "Validar disponibilidad de terreno en clusters top 5 antes de proceder",
+    "Considerar hibridación de soluciones en clusters mixtos para maximizar beneficios 24h"
+  ]
+}

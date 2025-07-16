@@ -1,0 +1,556 @@
+{
+  "timestamp": "2025-07-16T10:03:52.552409",
+  "methodology": "Índice de Aptitud Solar sin BESS (IAS)",
+  "production_assumption": "1850 MWh/año/MW (trackers + bifacial)",
+  "total_clusters": 15,
+  "top_clusters": [
+    {
+      "ranking": 1,
+      "cluster_id": 3,
+      "ubicacion": {
+        "latitud": -38.921954,
+        "longitud": -67.711347,
+        "radio_km": 117.65
+      },
+      "metricas_basicas": {
+        "transformadores": 359,
+        "usuarios": 73774,
+        "potencia_total_mva": 118.84,
+        "tasa_falla": 0.401
+      },
+      "scores_ias": {
+        "ias_promedio": 0.651,
+        "C1_coincidencia": 0.838,
+        "C2_capacidad_absorcion": 0.332,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.614,
+        "C5_calidad_servicio": 0.608
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 35.65,
+        "produccion_anual_mwh": 65956.0,
+        "perfil_dominante": "Comercial",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 71.3
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 73774,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 2,
+      "cluster_id": 0,
+      "ubicacion": {
+        "latitud": -39.019278,
+        "longitud": -67.575276,
+        "radio_km": 120.08
+      },
+      "metricas_basicas": {
+        "transformadores": 264,
+        "usuarios": 17211,
+        "potencia_total_mva": 73.2,
+        "tasa_falla": 0.466
+      },
+      "scores_ias": {
+        "ias_promedio": 0.417,
+        "C1_coincidencia": 0.455,
+        "C2_capacidad_absorcion": 0.213,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.34,
+        "C5_calidad_servicio": 0.789
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 21.96,
+        "produccion_anual_mwh": 40627.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 43.9
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 17211,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 3,
+      "cluster_id": 13,
+      "ubicacion": {
+        "latitud": -40.8243,
+        "longitud": -63.011257,
+        "radio_km": 71.28
+      },
+      "metricas_basicas": {
+        "transformadores": 71,
+        "usuarios": 15166,
+        "potencia_total_mva": 21.55,
+        "tasa_falla": 0.155
+      },
+      "scores_ias": {
+        "ias_promedio": 0.645,
+        "C1_coincidencia": 0.844,
+        "C2_capacidad_absorcion": 0.319,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.646,
+        "C5_calidad_servicio": 0.411
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 6.46,
+        "produccion_anual_mwh": 11957.0,
+        "perfil_dominante": "Comercial",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 12.9
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 15166,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 4,
+      "cluster_id": 10,
+      "ubicacion": {
+        "latitud": -40.734417,
+        "longitud": -65.66361,
+        "radio_km": 205.3
+      },
+      "metricas_basicas": {
+        "transformadores": 47,
+        "usuarios": 8540,
+        "potencia_total_mva": 13.59,
+        "tasa_falla": 0.277
+      },
+      "scores_ias": {
+        "ias_promedio": 0.635,
+        "C1_coincidencia": 0.834,
+        "C2_capacidad_absorcion": 0.291,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.606,
+        "C5_calidad_servicio": 0.515
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 4.08,
+        "produccion_anual_mwh": 7540.0,
+        "perfil_dominante": "Comercial",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 8.2
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 8540,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 5,
+      "cluster_id": 7,
+      "ubicacion": {
+        "latitud": -41.669725,
+        "longitud": -70.702825,
+        "radio_km": 174.0
+      },
+      "metricas_basicas": {
+        "transformadores": 37,
+        "usuarios": 6400,
+        "potencia_total_mva": 5.96,
+        "tasa_falla": 0.27
+      },
+      "scores_ias": {
+        "ias_promedio": 0.642,
+        "C1_coincidencia": 0.85,
+        "C2_capacidad_absorcion": 0.206,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.776,
+        "C5_calidad_servicio": 0.516
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 1.79,
+        "produccion_anual_mwh": 3305.0,
+        "perfil_dominante": "Comercial",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 3.6
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 6400,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 6,
+      "cluster_id": 5,
+      "ubicacion": {
+        "latitud": -39.317662,
+        "longitud": -65.822799,
+        "radio_km": 85.31
+      },
+      "metricas_basicas": {
+        "transformadores": 39,
+        "usuarios": 7147,
+        "potencia_total_mva": 9.96,
+        "tasa_falla": 0.231
+      },
+      "scores_ias": {
+        "ias_promedio": 0.636,
+        "C1_coincidencia": 0.849,
+        "C2_capacidad_absorcion": 0.271,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.646,
+        "C5_calidad_servicio": 0.392
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 2.99,
+        "produccion_anual_mwh": 5528.0,
+        "perfil_dominante": "Comercial",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 6.0
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 7147,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 7,
+      "cluster_id": 4,
+      "ubicacion": {
+        "latitud": -38.913918,
+        "longitud": -67.93272,
+        "radio_km": 54.34
+      },
+      "metricas_basicas": {
+        "transformadores": 327,
+        "usuarios": 7162,
+        "potencia_total_mva": 42.32,
+        "tasa_falla": 0.263
+      },
+      "scores_ias": {
+        "ias_promedio": 0.381,
+        "C1_coincidencia": 0.455,
+        "C2_capacidad_absorcion": 0.094,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.302,
+        "C5_calidad_servicio": 0.629
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 12.7,
+        "produccion_anual_mwh": 23490.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 25.4
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 7162,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 8,
+      "cluster_id": 1,
+      "ubicacion": {
+        "latitud": -41.828263,
+        "longitud": -71.359209,
+        "radio_km": 102.94
+      },
+      "metricas_basicas": {
+        "transformadores": 70,
+        "usuarios": 1920,
+        "potencia_total_mva": 5.23,
+        "tasa_falla": 0.314
+      },
+      "scores_ias": {
+        "ias_promedio": 0.388,
+        "C1_coincidencia": 0.455,
+        "C2_capacidad_absorcion": 0.063,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.464,
+        "C5_calidad_servicio": 0.584
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 1.57,
+        "produccion_anual_mwh": 2903.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 3.1
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 1920,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 9,
+      "cluster_id": 11,
+      "ubicacion": {
+        "latitud": -40.633777,
+        "longitud": -64.873204,
+        "radio_km": 176.73
+      },
+      "metricas_basicas": {
+        "transformadores": 189,
+        "usuarios": 4106,
+        "potencia_total_mva": 18.82,
+        "tasa_falla": 0.164
+      },
+      "scores_ias": {
+        "ias_promedio": 0.362,
+        "C1_coincidencia": 0.454,
+        "C2_capacidad_absorcion": 0.075,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.324,
+        "C5_calidad_servicio": 0.275
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 5.65,
+        "produccion_anual_mwh": 10447.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 11.3
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 4106,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 10,
+      "cluster_id": 8,
+      "ubicacion": {
+        "latitud": -37.849266,
+        "longitud": -67.835425,
+        "radio_km": 44.85
+      },
+      "metricas_basicas": {
+        "transformadores": 112,
+        "usuarios": 3691,
+        "potencia_total_mva": 12.73,
+        "tasa_falla": 0.17
+      },
+      "scores_ias": {
+        "ias_promedio": 0.365,
+        "C1_coincidencia": 0.455,
+        "C2_capacidad_absorcion": 0.091,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.3,
+        "C5_calidad_servicio": 0.32
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 3.82,
+        "produccion_anual_mwh": 7067.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 7.6
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 3691,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 11,
+      "cluster_id": 2,
+      "ubicacion": {
+        "latitud": -40.782471,
+        "longitud": -63.168582,
+        "radio_km": 73.65
+      },
+      "metricas_basicas": {
+        "transformadores": 280,
+        "usuarios": 4601,
+        "potencia_total_mva": 22.59,
+        "tasa_falla": 0.125
+      },
+      "scores_ias": {
+        "ias_promedio": 0.354,
+        "C1_coincidencia": 0.454,
+        "C2_capacidad_absorcion": 0.06,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.317,
+        "C5_calidad_servicio": 0.185
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 6.78,
+        "produccion_anual_mwh": 12540.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 13.6
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 4601,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 12,
+      "cluster_id": 6,
+      "ubicacion": {
+        "latitud": -39.307563,
+        "longitud": -65.83501,
+        "radio_km": 71.25
+      },
+      "metricas_basicas": {
+        "transformadores": 269,
+        "usuarios": 3623,
+        "potencia_total_mva": 22.83,
+        "tasa_falla": 0.115
+      },
+      "scores_ias": {
+        "ias_promedio": 0.358,
+        "C1_coincidencia": 0.455,
+        "C2_capacidad_absorcion": 0.061,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.336,
+        "C5_calidad_servicio": 0.238
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 6.85,
+        "produccion_anual_mwh": 12670.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 13.7
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 3623,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 13,
+      "cluster_id": 9,
+      "ubicacion": {
+        "latitud": -41.014314,
+        "longitud": -68.970125,
+        "radio_km": 194.4
+      },
+      "metricas_basicas": {
+        "transformadores": 90,
+        "usuarios": 1137,
+        "potencia_total_mva": 4.43,
+        "tasa_falla": 0.189
+      },
+      "scores_ias": {
+        "ias_promedio": 0.353,
+        "C1_coincidencia": 0.45,
+        "C2_capacidad_absorcion": 0.038,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.354,
+        "C5_calidad_servicio": 0.228
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 1.33,
+        "produccion_anual_mwh": 2460.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 2.7
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 1137,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 14,
+      "cluster_id": 12,
+      "ubicacion": {
+        "latitud": -39.023418,
+        "longitud": -67.537528,
+        "radio_km": 78.59
+      },
+      "metricas_basicas": {
+        "transformadores": 405,
+        "usuarios": 3363,
+        "potencia_total_mva": 26.45,
+        "tasa_falla": 0.01
+      },
+      "scores_ias": {
+        "ias_promedio": 0.345,
+        "C1_coincidencia": 0.455,
+        "C2_capacidad_absorcion": 0.046,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.302,
+        "C5_calidad_servicio": 0.101
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 7.94,
+        "produccion_anual_mwh": 14681.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 15.9
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 3363,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    },
+    {
+      "ranking": 15,
+      "cluster_id": 14,
+      "ubicacion": {
+        "latitud": -41.783643,
+        "longitud": -71.512478,
+        "radio_km": 106.45
+      },
+      "metricas_basicas": {
+        "transformadores": 130,
+        "usuarios": 635,
+        "potencia_total_mva": 3.1,
+        "tasa_falla": 0.0
+      },
+      "scores_ias": {
+        "ias_promedio": 0.337,
+        "C1_coincidencia": 0.455,
+        "C2_capacidad_absorcion": 0.018,
+        "C3_debilidad_red": 0.5,
+        "C4_cargabilidad": 0.3,
+        "C5_calidad_servicio": 0.043
+      },
+      "recomendacion_gd": {
+        "potencia_mw": 0.93,
+        "produccion_anual_mwh": 1723.0,
+        "perfil_dominante": "Mixto",
+        "configuracion_sugerida": "Solar FV con trackers + paneles bifaciales",
+        "area_estimada_ha": 1.9
+      },
+      "beneficios_esperados": {
+        "usuarios_beneficiados": 635,
+        "reduccion_fallas_esperada": "30-50%",
+        "mejora_tension": "Significativa en horario diurno",
+        "reduccion_perdidas": "20-40% en alimentador"
+      }
+    }
+  ],
+  "resumen_ejecutivo": {
+    "gd_total_recomendada_mw": 120.48,
+    "produccion_total_anual_mwh": 222894.0,
+    "usuarios_beneficiados_total": 158476,
+    "inversion_estimada_musd": 144.6,
+    "area_total_requerida_ha": 241.0,
+    "reduccion_emisiones_tco2_anual": 89.2
+  }
+}

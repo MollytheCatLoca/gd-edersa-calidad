@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "avg_ias_v3": 0.49891291232893786,
+    "avg_ias_original": 0.42652599651003686,
+    "avg_delta": 0.07238691581890112,
+    "clusters_improved": 12,
+    "clusters_worsened": 3
+  },
+  "metadata": {
+    "criteria_weights": {
+      "C1": 0.087,
+      "C2": 0.201,
+      "C3": 0.031,
+      "C4": 0.056,
+      "C5": 0.12,
+      "C6": 0.301,
+      "C7": 0.204
+    }
+  }
+}

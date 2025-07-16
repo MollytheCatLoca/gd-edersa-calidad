@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "generated_at": "2025-07-16T10:11:27.284586",
+    "title": "Análisis de Oportunidades GD Solar - EDERSA",
+    "subtitle": "Priorización de Clusters sin BESS",
+    "production_assumption": "1,850 MWh/MW/año (tracker + bifacial)",
+    "methodology": "Índice de Aptitud Solar (IAS)"
+  },
+  "executive_summary": {
+    "total_clusters_analyzed": 15,
+    "clusters_prioritized": 15,
+    "total_gd_recommended_mw": 120.48,
+    "total_annual_production_gwh": 222.9,
+    "total_users_benefited": 158476,
+    "total_investment_musd": 144.6,
+    "average_ias_score": 0.458
+  },
+  "key_findings": [
+    {
+      "finding": "Perfil óptimo identificado",
+      "detail": "Los clusters con perfil Comercial muestran la mayor aptitud para GD solar sin BESS"
+    },
+    {
+      "finding": "Beneficios técnicos significativos",
+      "detail": "Mejora de tensión promedio del 3.2% y reducción de pérdidas del 28% en clusters prioritarios"
+    },
+    {
+      "finding": "Viabilidad económica confirmada",
+      "detail": "ROI esperado superior al 15% en todos los clusters del top 10"
+    },
+    {
+      "finding": "Impacto social positivo",
+      "detail": "158,476 usuarios verán mejoras en calidad de servicio"
+    }
+  ],
+  "implementation_phases": [
+    {
+      "phase": "Fase 1",
+      "timeline": "0-6 meses",
+      "clusters": 5,
+      "gd_capacity_mw": 69.94,
+      "investment_musd": 83.9,
+      "users_benefited": 121091,
+      "key_clusters": [
+        {
+          "ranking": 1,
+          "profile": "Comercial",
+          "gd_mw": 35.65,
+          "ias_score": 0.651
+        },
+        {
+          "ranking": 2,
+          "profile": "Mixto",
+          "gd_mw": 21.96,
+          "ias_score": 0.417
+        },
+        {
+          "ranking": 3,
+          "profile": "Comercial",
+          "gd_mw": 6.46,
+          "ias_score": 0.645
+        },
+        {
+          "ranking": 4,
+          "profile": "Comercial",
+          "gd_mw": 4.08,
+          "ias_score": 0.635
+        },
+        {
+          "ranking": 5,
+          "profile": "Comercial",
+          "gd_mw": 1.79,
+          "ias_score": 0.642
+        }
+      ]
+    },
+    {
+      "phase": "Fase 2",
+      "timeline": "6-12 meses",
+      "clusters": 5,
+      "gd_capacity_mw": 26.72,
+      "investment_musd": 32.1,
+      "users_benefited": 24026,
+      "key_clusters": [
+        {
+          "ranking": 6,
+          "profile": "Comercial",
+          "gd_mw": 2.99,
+          "ias_score": 0.636
+        },
+        {
+          "ranking": 7,
+          "profile": "Mixto",
+          "gd_mw": 12.7,
+          "ias_score": 0.381
+        },
+        {
+          "ranking": 8,
+          "profile": "Mixto",
+          "gd_mw": 1.57,
+          "ias_score": 0.388
+        },
+        {
+          "ranking": 9,
+          "profile": "Mixto",
+          "gd_mw": 5.65,
+          "ias_score": 0.362
+        },
+        {
+          "ranking": 10,
+          "profile": "Mixto",
+          "gd_mw": 3.82,
+          "ias_score": 0.365
+        }
+      ]
+    },
+    {
+      "phase": "Fase 3",
+      "timeline": "12-24 meses",
+      "clusters": 5,
+      "gd_capacity_mw": 23.82,
+      "investment_musd": 28.6,
+      "users_benefited": 13359,
+      "key_clusters": [
+        {
+          "ranking": 11,
+          "profile": "Mixto",
+          "gd_mw": 6.78,
+          "ias_score": 0.354
+        },
+        {
+          "ranking": 12,
+          "profile": "Mixto",
+          "gd_mw": 6.85,
+          "ias_score": 0.358
+        },
+        {
+          "ranking": 13,
+          "profile": "Mixto",
+          "gd_mw": 1.33,
+          "ias_score": 0.353
+        },
+        {
+          "ranking": 14,
+          "profile": "Mixto",
+          "gd_mw": 7.94,
+          "ias_score": 0.345
+        },
+        {
+          "ranking": 15,
+          "profile": "Mixto",
+          "gd_mw": 0.93,
+          "ias_score": 0.337
+        }
+      ]
+    }
+  ],
+  "risks_and_mitigation": [
+    {
+      "risk": "Variabilidad de generación solar",
+      "mitigation": "Priorización de clusters con alta coincidencia demanda-generación",
+      "severity": "Media"
+    },
+    {
+      "risk": "Limitaciones de capacidad de red",
+      "mitigation": "Análisis detallado de flujo de potencia antes de implementación",
+      "severity": "Alta"
+    },
+    {
+      "risk": "Aceptación social",
+      "mitigation": "Programa de comunicación y participación comunitaria",
+      "severity": "Baja"
+    }
+  ],
+  "next_steps": [
+    "Validación técnica detallada de los 5 clusters prioritarios",
+    "Estudio de disponibilidad de terrenos y permisos ambientales",
+    "Análisis de capacidad de interconexión con operador de red",
+    "Desarrollo de modelos de negocio y financiamiento",
+    "Diseño de programa piloto para cluster #1"
+  ]
+}

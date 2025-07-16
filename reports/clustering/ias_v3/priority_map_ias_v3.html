@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9d1c3850840cd32d026046f969a57976 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                top: 10px; right: 10px; width: 200px; height: 180px; 
+                background-color: white; z-index:9999; font-size:14px;
+                border:2px solid grey; border-radius: 5px">
+    <p style="margin: 10px;"><b>IAS 3.0 Score</b></p>
+    <p style="margin: 10px;"><span style="color:#006400;">●</span> ≥0.70 (Excelente)</p>
+    <p style="margin: 10px;"><span style="color:#228B22;">●</span> 0.60-0.70 (Muy Bueno)</p>
+    <p style="margin: 10px;"><span style="color:#FFFF00;">●</span> 0.50-0.60 (Bueno)</p>
+    <p style="margin: 10px;"><span style="color:#FFA500;">●</span> 0.40-0.50 (Regular)</p>
+    <p style="margin: 10px;"><span style="color:#FF0000;">●</span> <0.40 (Bajo)</p>
+    <p style="margin: 10px;">⭐ = Top 5 Clusters</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_9d1c3850840cd32d026046f969a57976" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9d1c3850840cd32d026046f969a57976 = L.map(
+                "map_9d1c3850840cd32d026046f969a57976",
+                {
+                    center: [-40.10826454399842, -67.30075973581398],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_622056941dd53076ff3b7cfe9be3c6f8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_622056941dd53076ff3b7cfe9be3c6f8.addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+            var circle_4e99b9a4d83fbaaacf369759e804519d = L.circle(
+                [-38.92195382172702, -67.71134698328692],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5970.929575870076, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_576224e882cf756be597721118b28c00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92852b4d0106c17eeb355d40147782e8 = $(`<div id="html_92852b4d0106c17eeb355d40147782e8" style="width: 100.0%; height: 100.0%;">         <b>Cluster 3</b><br>         <b>IAS 3.0:</b> 0.342<br>         <b>IAS Original:</b> 0.651<br>         <b>Cambio Ranking:</b> -14<br>         <hr>         <b>Perfil:</b> Comercial<br>         <b>GD Recomendada:</b> 35.7 MW<br>         <b>Usuarios:</b> 73,774.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 2.9</b><br>         <b>C7 (Terreno): 0.4</b>         </div>`)[0];
+                popup_576224e882cf756be597721118b28c00.setContent(html_92852b4d0106c17eeb355d40147782e8);
+            
+        
+
+        circle_4e99b9a4d83fbaaacf369759e804519d.bindPopup(popup_576224e882cf756be597721118b28c00)
+        ;
+
+        
+    
+    
+            var circle_98c58f21c5206b3dcd423c0fe6186d34 = L.circle(
+                [-39.01927755681818, -67.5752764280303],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4686.21382354668, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_52073e987da363683e1731d317a435c9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6a41f9624f4375d19442965f4f2b107 = $(`<div id="html_c6a41f9624f4375d19442965f4f2b107" style="width: 100.0%; height: 100.0%;">         <b>Cluster 0</b><br>         <b>IAS 3.0:</b> 0.454<br>         <b>IAS Original:</b> 0.417<br>         <b>Cambio Ranking:</b> -4<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 22.0 MW<br>         <b>Usuarios:</b> 17,211.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 1.7</b>         </div>`)[0];
+                popup_52073e987da363683e1731d317a435c9.setContent(html_c6a41f9624f4375d19442965f4f2b107);
+            
+        
+
+        circle_98c58f21c5206b3dcd423c0fe6186d34.bindPopup(popup_52073e987da363683e1731d317a435c9)
+        ;
+
+        
+    
+    
+            var circle_80b2cafcfe0ae5a72667f1035f3ecb05 = L.circle(
+                [-40.824300281690135, -63.01125735211268],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2542.3414404835557, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_cb595867ab2765e9f1c26135a605f848 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a87b636334044ebaa5b79b8592bfc1ea = $(`<div id="html_a87b636334044ebaa5b79b8592bfc1ea" style="width: 100.0%; height: 100.0%;">         <b>Cluster 13</b><br>         <b>IAS 3.0:</b> 0.376<br>         <b>IAS Original:</b> 0.645<br>         <b>Cambio Ranking:</b> -12<br>         <hr>         <b>Perfil:</b> Comercial<br>         <b>GD Recomendada:</b> 6.5 MW<br>         <b>Usuarios:</b> 15,166.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 2.9</b><br>         <b>C7 (Terreno): 2.0</b>         </div>`)[0];
+                popup_cb595867ab2765e9f1c26135a605f848.setContent(html_a87b636334044ebaa5b79b8592bfc1ea);
+            
+        
+
+        circle_80b2cafcfe0ae5a72667f1035f3ecb05.bindPopup(popup_cb595867ab2765e9f1c26135a605f848)
+        ;
+
+        
+    
+    
+            var circle_ab09aa0e60b90ad74d97045e10259654 = L.circle(
+                [-40.734416531914896, -65.6636104893617],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2018.786764371116, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_1ddea3f60f01c080ce930cca5644eb7b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed44b203a25d4df47b94f6be6dc92308 = $(`<div id="html_ed44b203a25d4df47b94f6be6dc92308" style="width: 100.0%; height: 100.0%;">         <b>Cluster 10</b><br>         <b>IAS 3.0:</b> 0.387<br>         <b>IAS Original:</b> 0.635<br>         <b>Cambio Ranking:</b> -8<br>         <hr>         <b>Perfil:</b> Comercial<br>         <b>GD Recomendada:</b> 4.1 MW<br>         <b>Usuarios:</b> 8,540.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 2.9</b><br>         <b>C7 (Terreno): 2.6</b>         </div>`)[0];
+                popup_1ddea3f60f01c080ce930cca5644eb7b.setContent(html_ed44b203a25d4df47b94f6be6dc92308);
+            
+        
+
+        circle_ab09aa0e60b90ad74d97045e10259654.bindPopup(popup_1ddea3f60f01c080ce930cca5644eb7b)
+        ;
+
+        
+    
+    
+            var circle_a31650c0592e8d024d36868911a389bb = L.circle(
+                [-41.66972483783784, -70.70282486486488],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1336.6001645967278, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_e15f9be9732d66a4e26f3d88a9711eab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8b5ead76d7276fb551e86ea6688020f = $(`<div id="html_b8b5ead76d7276fb551e86ea6688020f" style="width: 100.0%; height: 100.0%;">         <b>Cluster 7</b><br>         <b>IAS 3.0:</b> 0.417<br>         <b>IAS Original:</b> 0.642<br>         <b>Cambio Ranking:</b> -8<br>         <hr>         <b>Perfil:</b> Comercial<br>         <b>GD Recomendada:</b> 1.8 MW<br>         <b>Usuarios:</b> 6,400.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 2.9</b><br>         <b>C7 (Terreno): 4.0</b>         </div>`)[0];
+                popup_e15f9be9732d66a4e26f3d88a9711eab.setContent(html_b8b5ead76d7276fb551e86ea6688020f);
+            
+        
+
+        circle_a31650c0592e8d024d36868911a389bb.bindPopup(popup_e15f9be9732d66a4e26f3d88a9711eab)
+        ;
+
+        
+    
+    
+            var circle_13f33d731081432a40063dcac8fef9f3 = L.circle(
+                [-39.31766230769232, -65.82279871794871],
+                {"bubblingMouseEvents": true, "color": "#FF0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF0000", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1728.583234906552, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_170094fd80fc79d3644e68929ffa52ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e23d493a8f65b9de4903cc0544758b26 = $(`<div id="html_e23d493a8f65b9de4903cc0544758b26" style="width: 100.0%; height: 100.0%;">         <b>Cluster 5</b><br>         <b>IAS 3.0:</b> 0.392<br>         <b>IAS Original:</b> 0.636<br>         <b>Cambio Ranking:</b> -8<br>         <hr>         <b>Perfil:</b> Comercial<br>         <b>GD Recomendada:</b> 3.0 MW<br>         <b>Usuarios:</b> 7,147.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 2.9</b><br>         <b>C7 (Terreno): 2.8</b>         </div>`)[0];
+                popup_170094fd80fc79d3644e68929ffa52ff.setContent(html_e23d493a8f65b9de4903cc0544758b26);
+            
+        
+
+        circle_13f33d731081432a40063dcac8fef9f3.bindPopup(popup_170094fd80fc79d3644e68929ffa52ff)
+        ;
+
+        
+    
+    
+            var circle_79d7c0b9fc384d276d16b00ba1f766a8 = L.circle(
+                [-38.91391786544342, -67.93272047094801],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3563.3130651122983, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_daca749bd7fa7d9599fa62a92204b55d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cad3d8a68005dd5dfbc421581cd81d7 = $(`<div id="html_4cad3d8a68005dd5dfbc421581cd81d7" style="width: 100.0%; height: 100.0%;">         <b>Cluster 4</b><br>         <b>IAS 3.0:</b> 0.480<br>         <b>IAS Original:</b> 0.381<br>         <b>Cambio Ranking:</b> -1<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 12.7 MW<br>         <b>Usuarios:</b> 7,162.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 3.0</b>         </div>`)[0];
+                popup_daca749bd7fa7d9599fa62a92204b55d.setContent(html_4cad3d8a68005dd5dfbc421581cd81d7);
+            
+        
+
+        circle_79d7c0b9fc384d276d16b00ba1f766a8.bindPopup(popup_daca749bd7fa7d9599fa62a92204b55d)
+        ;
+
+        
+    
+    
+            var circle_8d10dc829c5249960f185e632dd32343 = L.circle(
+                [-41.828262942857144, -71.35920935714287],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1252.717047062105, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_74d6a53c9e65cd059424a8c69dd1917e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_195d4409d95d0f65e3110407852801a3 = $(`<div id="html_195d4409d95d0f65e3110407852801a3" style="width: 100.0%; height: 100.0%;">         <b>Cluster 1</b><br>         <b>IAS 3.0:</b> 0.547<br>         <b>IAS Original:</b> 0.388<br>         <b>Cambio Ranking:</b> +4<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 1.6 MW<br>         <b>Usuarios:</b> 1,920.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 6.3</b>         </div>`)[0];
+                popup_74d6a53c9e65cd059424a8c69dd1917e.setContent(html_195d4409d95d0f65e3110407852801a3);
+            
+        
+
+        circle_8d10dc829c5249960f185e632dd32343.bindPopup(popup_74d6a53c9e65cd059424a8c69dd1917e)
+        ;
+
+        
+    
+    
+            var marker_f2fa633023ee91bfa4b0afb79fb4634e = L.marker(
+                [-41.828262942857144, -71.35920935714287],
+                {
+}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+            var icon_17a14ae8fc69f38a38fbcb14d3c54cad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9064718113ccfbcdaf88097a2a503450 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f1a399dc029a43d3ce9b6cecf7367d0 = $(`<div id="html_6f1a399dc029a43d3ce9b6cecf7367d0" style="width: 100.0%; height: 100.0%;">         <b>Cluster 1</b><br>         <b>IAS 3.0:</b> 0.547<br>         <b>IAS Original:</b> 0.388<br>         <b>Cambio Ranking:</b> +4<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 1.6 MW<br>         <b>Usuarios:</b> 1,920.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 6.3</b>         </div>`)[0];
+                popup_9064718113ccfbcdaf88097a2a503450.setContent(html_6f1a399dc029a43d3ce9b6cecf7367d0);
+            
+        
+
+        marker_f2fa633023ee91bfa4b0afb79fb4634e.bindPopup(popup_9064718113ccfbcdaf88097a2a503450)
+        ;
+
+        
+    
+    
+                marker_f2fa633023ee91bfa4b0afb79fb4634e.setIcon(icon_17a14ae8fc69f38a38fbcb14d3c54cad);
+            
+    
+            var circle_c1a7684c4eeceeda88d95d7ace9829fc = L.circle(
+                [-40.63377724338624, -64.87320374603173],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2376.320685429473, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_e1f7f23871e10efc6d70f532dd9e880d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf3e6917176fd6b1ef951072d7aa56a0 = $(`<div id="html_cf3e6917176fd6b1ef951072d7aa56a0" style="width: 100.0%; height: 100.0%;">         <b>Cluster 11</b><br>         <b>IAS 3.0:</b> 0.499<br>         <b>IAS Original:</b> 0.362<br>         <b>Cambio Ranking:</b> +5<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 5.6 MW<br>         <b>Usuarios:</b> 4,106.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 3.9</b>         </div>`)[0];
+                popup_e1f7f23871e10efc6d70f532dd9e880d.setContent(html_cf3e6917176fd6b1ef951072d7aa56a0);
+            
+        
+
+        circle_c1a7684c4eeceeda88d95d7ace9829fc.bindPopup(popup_e1f7f23871e10efc6d70f532dd9e880d)
+        ;
+
+        
+    
+    
+            var marker_dcf537dcf4cf47d6e13f4cdad692db48 = L.marker(
+                [-40.63377724338624, -64.87320374603173],
+                {
+}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+            var icon_dfdff461d5acf898a9a3f54d762a9f9a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad3e93e5d49dcbac31c4495c30415582 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8ce4542e402425e747ce880c80d0748 = $(`<div id="html_b8ce4542e402425e747ce880c80d0748" style="width: 100.0%; height: 100.0%;">         <b>Cluster 11</b><br>         <b>IAS 3.0:</b> 0.499<br>         <b>IAS Original:</b> 0.362<br>         <b>Cambio Ranking:</b> +5<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 5.6 MW<br>         <b>Usuarios:</b> 4,106.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 3.9</b>         </div>`)[0];
+                popup_ad3e93e5d49dcbac31c4495c30415582.setContent(html_b8ce4542e402425e747ce880c80d0748);
+            
+        
+
+        marker_dcf537dcf4cf47d6e13f4cdad692db48.bindPopup(popup_ad3e93e5d49dcbac31c4495c30415582)
+        ;
+
+        
+    
+    
+                marker_dcf537dcf4cf47d6e13f4cdad692db48.setIcon(icon_dfdff461d5acf898a9a3f54d762a9f9a);
+            
+    
+            var circle_326150998bc20df754afa571a76ae609 = L.circle(
+                [-37.84926633035714, -67.83542506250001],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1954.5331923505419, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_b11ddd7bf15c2820db659094f89b6712 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76191e73a09d75f857565ae1ba18dbb8 = $(`<div id="html_76191e73a09d75f857565ae1ba18dbb8" style="width: 100.0%; height: 100.0%;">         <b>Cluster 8</b><br>         <b>IAS 3.0:</b> 0.517<br>         <b>IAS Original:</b> 0.365<br>         <b>Cambio Ranking:</b> +5<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 3.8 MW<br>         <b>Usuarios:</b> 3,691.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 4.8</b>         </div>`)[0];
+                popup_b11ddd7bf15c2820db659094f89b6712.setContent(html_76191e73a09d75f857565ae1ba18dbb8);
+            
+        
+
+        circle_326150998bc20df754afa571a76ae609.bindPopup(popup_b11ddd7bf15c2820db659094f89b6712)
+        ;
+
+        
+    
+    
+            var marker_2655cd69701fde76c61a06e3c991f16f = L.marker(
+                [-37.84926633035714, -67.83542506250001],
+                {
+}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+            var icon_436def933430811b345c9ad47f837311 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30963392d6c2dc515dccde39ce7b033f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40ad62ae8e2c1aee552ae21d701194b7 = $(`<div id="html_40ad62ae8e2c1aee552ae21d701194b7" style="width: 100.0%; height: 100.0%;">         <b>Cluster 8</b><br>         <b>IAS 3.0:</b> 0.517<br>         <b>IAS Original:</b> 0.365<br>         <b>Cambio Ranking:</b> +5<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 3.8 MW<br>         <b>Usuarios:</b> 3,691.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 4.8</b>         </div>`)[0];
+                popup_30963392d6c2dc515dccde39ce7b033f.setContent(html_40ad62ae8e2c1aee552ae21d701194b7);
+            
+        
+
+        marker_2655cd69701fde76c61a06e3c991f16f.bindPopup(popup_30963392d6c2dc515dccde39ce7b033f)
+        ;
+
+        
+    
+    
+                marker_2655cd69701fde76c61a06e3c991f16f.setIcon(icon_436def933430811b345c9ad47f837311);
+            
+    
+            var circle_7cd6573a3d2102185373b919a205e7c7 = L.circle(
+                [-40.78247057142857, -63.16858242142857],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2603.555261560622, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_7ac2ff1b09980f7c06fdf387e77a89e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e290267b86965b1c623e386393a3ae2b = $(`<div id="html_e290267b86965b1c623e386393a3ae2b" style="width: 100.0%; height: 100.0%;">         <b>Cluster 2</b><br>         <b>IAS 3.0:</b> 0.496<br>         <b>IAS Original:</b> 0.354<br>         <b>Cambio Ranking:</b> +6<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 6.8 MW<br>         <b>Usuarios:</b> 4,601.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 3.8</b>         </div>`)[0];
+                popup_7ac2ff1b09980f7c06fdf387e77a89e1.setContent(html_e290267b86965b1c623e386393a3ae2b);
+            
+        
+
+        circle_7cd6573a3d2102185373b919a205e7c7.bindPopup(popup_7ac2ff1b09980f7c06fdf387e77a89e1)
+        ;
+
+        
+    
+    
+            var circle_6f02edcedf63bb2ef9b6c95575a941d8 = L.circle(
+                [-39.30756299256505, -65.83500957992565],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2616.944783521425, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_c8d7d6d19b446d374f3f04694ddc9506 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_733bd8fb495337e8d41baa3664e89ea0 = $(`<div id="html_733bd8fb495337e8d41baa3664e89ea0" style="width: 100.0%; height: 100.0%;">         <b>Cluster 6</b><br>         <b>IAS 3.0:</b> 0.496<br>         <b>IAS Original:</b> 0.358<br>         <b>Cambio Ranking:</b> +4<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 6.8 MW<br>         <b>Usuarios:</b> 3,623.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 3.8</b>         </div>`)[0];
+                popup_c8d7d6d19b446d374f3f04694ddc9506.setContent(html_733bd8fb495337e8d41baa3664e89ea0);
+            
+        
+
+        circle_6f02edcedf63bb2ef9b6c95575a941d8.bindPopup(popup_c8d7d6d19b446d374f3f04694ddc9506)
+        ;
+
+        
+    
+    
+            var circle_c3ddab3ef430b2126f0e590a594e639f = L.circle(
+                [-41.014314322222226, -68.9701245888889],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1153.082824431966, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_fb2be8f7a8551614a0f122e3e85397f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_33c07dcf8ed111484747c480cac368ab = $(`<div id="html_33c07dcf8ed111484747c480cac368ab" style="width: 100.0%; height: 100.0%;">         <b>Cluster 9</b><br>         <b>IAS 3.0:</b> 0.550<br>         <b>IAS Original:</b> 0.353<br>         <b>Cambio Ranking:</b> +11<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 1.3 MW<br>         <b>Usuarios:</b> 1,137.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 6.4</b>         </div>`)[0];
+                popup_fb2be8f7a8551614a0f122e3e85397f1.setContent(html_33c07dcf8ed111484747c480cac368ab);
+            
+        
+
+        circle_c3ddab3ef430b2126f0e590a594e639f.bindPopup(popup_fb2be8f7a8551614a0f122e3e85397f1)
+        ;
+
+        
+    
+    
+            var marker_bc4535680f45e605628dc65c950dad7e = L.marker(
+                [-41.014314322222226, -68.9701245888889],
+                {
+}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+            var icon_9bf7b9660f603d789a56a38b09156bd5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bf9beba24586d9c5d0304cc75245be65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7220dc35f4e35691d9f02fbd43c52d5 = $(`<div id="html_e7220dc35f4e35691d9f02fbd43c52d5" style="width: 100.0%; height: 100.0%;">         <b>Cluster 9</b><br>         <b>IAS 3.0:</b> 0.550<br>         <b>IAS Original:</b> 0.353<br>         <b>Cambio Ranking:</b> +11<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 1.3 MW<br>         <b>Usuarios:</b> 1,137.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 6.4</b>         </div>`)[0];
+                popup_bf9beba24586d9c5d0304cc75245be65.setContent(html_e7220dc35f4e35691d9f02fbd43c52d5);
+            
+        
+
+        marker_bc4535680f45e605628dc65c950dad7e.bindPopup(popup_bf9beba24586d9c5d0304cc75245be65)
+        ;
+
+        
+    
+    
+                marker_bc4535680f45e605628dc65c950dad7e.setIcon(icon_9bf7b9660f603d789a56a38b09156bd5);
+            
+    
+            var circle_86455621450beca719f0d1c065526b59 = L.circle(
+                [-39.023417661728395, -67.53752799012346],
+                {"bubblingMouseEvents": true, "color": "#FFA500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFA500", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2817.019701741541, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_bd50dbe5c41225a998f9fecde4d99b04 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83f734900c9c157a5581a598168abc97 = $(`<div id="html_83f734900c9c157a5581a598168abc97" style="width: 100.0%; height: 100.0%;">         <b>Cluster 12</b><br>         <b>IAS 3.0:</b> 0.493<br>         <b>IAS Original:</b> 0.345<br>         <b>Cambio Ranking:</b> +6<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 7.9 MW<br>         <b>Usuarios:</b> 3,363.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 3.6</b>         </div>`)[0];
+                popup_bd50dbe5c41225a998f9fecde4d99b04.setContent(html_83f734900c9c157a5581a598168abc97);
+            
+        
+
+        circle_86455621450beca719f0d1c065526b59.bindPopup(popup_bd50dbe5c41225a998f9fecde4d99b04)
+        ;
+
+        
+    
+    
+            var circle_76df160f9fa44ef8eceb0ba8a163338d = L.circle(
+                [-41.78364289230769, -71.51247798461537],
+                {"bubblingMouseEvents": true, "color": "#FFFF00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FFFF00", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 965.1424765287247, "stroke": true, "weight": 2}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+        var popup_674916d6236893f7042fbf2cef0e2965 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6295ea1547da070b53351d5d3146be72 = $(`<div id="html_6295ea1547da070b53351d5d3146be72" style="width: 100.0%; height: 100.0%;">         <b>Cluster 14</b><br>         <b>IAS 3.0:</b> 0.555<br>         <b>IAS Original:</b> 0.337<br>         <b>Cambio Ranking:</b> +14<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 0.9 MW<br>         <b>Usuarios:</b> 635.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 6.6</b>         </div>`)[0];
+                popup_674916d6236893f7042fbf2cef0e2965.setContent(html_6295ea1547da070b53351d5d3146be72);
+            
+        
+
+        circle_76df160f9fa44ef8eceb0ba8a163338d.bindPopup(popup_674916d6236893f7042fbf2cef0e2965)
+        ;
+
+        
+    
+    
+            var marker_338c3bd0478915dfcbd8bf2f408b4089 = L.marker(
+                [-41.78364289230769, -71.51247798461537],
+                {
+}
+            ).addTo(map_9d1c3850840cd32d026046f969a57976);
+        
+    
+            var icon_78da4ee0f81de9253b3520a8d0f8d74e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4fb5a05eea2709c1f5e7117b86101107 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82ad9a7a5335134c02deab0e7e5b9f39 = $(`<div id="html_82ad9a7a5335134c02deab0e7e5b9f39" style="width: 100.0%; height: 100.0%;">         <b>Cluster 14</b><br>         <b>IAS 3.0:</b> 0.555<br>         <b>IAS Original:</b> 0.337<br>         <b>Cambio Ranking:</b> +14<br>         <hr>         <b>Perfil:</b> Mixto<br>         <b>GD Recomendada:</b> 0.9 MW<br>         <b>Usuarios:</b> 635.0<br>         <hr>         <b>Scores por Criterio:</b><br>         C1 (Criticidad): 5.0<br>         C2 (Coincidencia): 5.0<br>         C3 (Vulnerabilidad): 5.0<br>         C4 (Cargabilidad): 5.0<br>         C5 (Riesgo RPF): 5.0<br>         <b>C6 (Q at Night): 5.7</b><br>         <b>C7 (Terreno): 6.6</b>         </div>`)[0];
+                popup_4fb5a05eea2709c1f5e7117b86101107.setContent(html_82ad9a7a5335134c02deab0e7e5b9f39);
+            
+        
+
+        marker_338c3bd0478915dfcbd8bf2f408b4089.bindPopup(popup_4fb5a05eea2709c1f5e7117b86101107)
+        ;
+
+        
+    
+    
+                marker_338c3bd0478915dfcbd8bf2f408b4089.setIcon(icon_78da4ee0f81de9253b3520a8d0f8d74e);
+            
+</script>
+</html>

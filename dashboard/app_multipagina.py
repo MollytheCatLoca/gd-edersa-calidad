@@ -115,6 +115,18 @@ app.index_string = '''
                 letter-spacing: 0.5px;
             }
             
+            /* Desactivar animaciones para evitar loops de renderizado */
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+            
+            /* Evitar que las cards crezcan */
+            .card {
+                overflow: hidden !important;
+                max-height: 100vh !important;
+            }
+            
             /* Responsive */
             @media (max-width: 768px) {
                 .sidebar {
