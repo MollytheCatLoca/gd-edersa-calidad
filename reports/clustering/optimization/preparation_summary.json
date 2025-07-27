@@ -1,0 +1,9 @@
+{
+  "total_clusters": 15,
+  "total_peak_demand_mw": 304.59759999999994,
+  "total_annual_energy_gwh": 615.0865309499999,
+  "total_users": 158476.0,
+  "avg_load_factor": 0.2373981832697953,
+  "total_penalties_musd": 2.536432507101369,
+  "timestamp": "2025-07-16T18:55:48.259206"
+}

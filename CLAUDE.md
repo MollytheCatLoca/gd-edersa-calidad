@@ -326,12 +326,27 @@ logger.error(f"Error en {transformer.codigo}: {e}")
    - Modos de falla de transformadores
    - Base para el análisis eléctrico implementado
 
+4. **Knowledge Base de Generación Distribuida** ⭐ NUEVO
+   ```
+   /Users/maxkeczeli/Proyects/gd-edersa-calidad/docs/knowledge_base/
+   ```
+   - **9 secciones** de documentación teórica y práctica
+   - **Marco teórico completo** sobre GD y potencia reactiva
+   - **Q at Night**: Innovación para operación 24 horas
+   - **Casos de estudio** con TIR > 20% comprobados
+   - **Guías de implementación** paso a paso
+   - Ver índice completo: `docs/knowledge_base/INDICE_KB_EDERSA.md`
+
 #### NOTA IMPORTANTE
 Ante cualquier duda sobre:
 - Topología de red y análisis MST → Consultar marco teórico
 - Cálculos de impedancia y caída de tensión → Ver sección 2 del marco teórico
 - Modos de falla (térmico/dieléctrico) → Ver sección 3 del marco teórico
 - Paths de archivos y acceso a datos → Consultar ACCESOS_DATOS_CLAUDE.md
+- **Generación Distribuida y Q at Night** → Ver Knowledge Base KB.4
+- **Análisis económico de GD** → Ver Knowledge Base KB.6
+- **Casos de referencia y ratios** → Ver Knowledge Base KB.7
+- **Implementación paso a paso** → Ver Knowledge Base KB.8
 
 4. **Escalabilidad a 14,025 transformadores**
    - Mitigación: Procesamiento por lotes y cache agresivo
@@ -447,3 +462,46 @@ Este documento refleja la evolución completa del proyecto desde el análisis in
 **Última actualización**: Fase 2.5 Completada - IAS 3.0 con Q at Night
 **Fecha**: 16 de Julio 2025
 **Estado**: Análisis completo, listo para implementación
+
+### 15. CONFIGURACIÓN DE PARÁMETROS (FASE 3)
+
+**IMPORTANTE**: Todos los parámetros económicos y técnicos están centralizados en:
+`/config/parameters.yaml`
+
+Este archivo contiene TODOS los valores configurables del sistema:
+
+#### Secciones principales:
+- **energy_prices**: Tarifas eléctricas y precios de energía
+- **capex**: Costos de inversión para PV, BESS, STATCOM
+- **opex**: Tasas de operación y mantenimiento
+- **financial**: Parámetros financieros (tasas, vida útil)
+- **charges_penalties**: Cargos por demanda y penalizaciones
+- **network_technical**: Parámetros técnicos de red
+- **demand_factors**: Factores de demanda y consumo por tipo
+- **operation_factors**: Factores de planta y operación
+- **degradation_efficiency**: Degradación y eficiencias
+- **technical_sensitivities**: Sensibilidades técnicas
+- **optimization_constraints**: Límites para optimización
+- **optimization_algorithm**: Configuración del algoritmo
+
+#### Para modificar parámetros:
+1. Editar directamente `/config/parameters.yaml`
+2. Los cambios se aplican automáticamente al ejecutar scripts
+3. NO modificar valores hardcodeados en el código fuente
+
+#### Valores clave actuales:
+- Precio energía: **75 USD/MWh**
+- CAPEX Solar: **800 USD/kW**
+- CAPEX BESS: **200 USD/kWh**
+- OPEX: **1% CAPEX anual**
+- Tasa descuento: **12%**
+- Vida útil: **20 años**
+
+#### Uso desde código:
+```python
+from src.config.config_loader import get_config
+
+config = get_config()
+economic_params = config.get_economic_params()
+network_params = config.get_network_params()
+```

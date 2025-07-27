@@ -1,0 +1,15 @@
+{
+  "voltage_nominal_kv": 13.2,
+  "base_power_factor": 0.85,
+  "technical_loss_rate": 0.08,
+  "pv_capacity_factor": 0.23,
+  "load_factor_residential": 0.35,
+  "load_factor_commercial": 0.45,
+  "load_factor_industrial": 0.65,
+  "load_factor_rural": 0.3,
+  "diversity_factor": 0.8,
+  "coincidence_factor": 0.7,
+  "max_injection_ratio": 0.8,
+  "min_voltage_pu": 0.95,
+  "max_voltage_pu": 1.05
+}

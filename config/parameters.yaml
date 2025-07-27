@@ -1,0 +1,165 @@
+# CONFIGURACIÓN COMPLETA - FASE 3 OPTIMIZACIÓN GD EDERSA
+# Archivo maestro de parámetros económicos y técnicos
+# Última actualización: Julio 2025
+
+# =================
+# PRECIOS DE ENERGÍA (USD/MWh)
+# =================
+energy_prices:
+  electricity_price: 75.0              # Tarifa promedio (70 energía + 5 transporte)
+  tariff_residential: 65.0             # Tarifa residencial
+  tariff_commercial: 85.0              # Tarifa comercial
+  tariff_industrial: 95.0              # Tarifa industrial
+  tariff_rural: 85.0                   # Tarifa rural
+  peak_tariff_multiplier: 1.03          # Multiplicador horario pico
+  export_price: 70.0                   # Precio venta excedentes a red
+  upstream_energy_cost: 60.0           # Costo energía mayorista
+  energy_not_served_cost: 100.0        # Costo energía no suministrada
+
+# =================
+# COSTOS DE INVERSIÓN (CAPEX)
+# =================
+capex:
+  pv_capex_usd_mw: 800000             # USD/MW solar instalado
+  bess_capex_usd_mwh: 200000          # USD/MWh capacidad batería
+  bess_capex_usd_mw: 50000            # USD/MW potencia batería
+  statcom_capex_usd_mvar: 40000       # USD/MVAr compensación reactiva
+  transformer_cost_usd_mva: 50000     # USD/MVA transformador
+  line_cost_usd_km: 100000            # USD/km línea MT
+  connection_charge_usd_mw: 25000     # USD/MW cargo conexión
+  bos_factor: 0.15                    # 15% Balance of System
+
+# =================
+# COSTOS OPERATIVOS (OPEX)
+# =================
+opex:
+  pv_opex_rate: 0.01                  # 1% del CAPEX anual
+  bess_opex_rate: 0.015               # 1.5% del CAPEX anual
+  statcom_opex_rate: 0.002             # 2% del CAPEX anual
+
+# =================
+# PARÁMETROS FINANCIEROS
+# =================
+financial:
+  discount_rate: 0.10                 # 10% tasa descuento
+  inflation_rate: 0.04                # 4% inflación anual
+  project_lifetime: 25                # años vida útil proyecto
+  depreciation_years: 10              # años depreciación activos
+
+# =================
+# CARGOS Y PENALIZACIONES
+# =================
+charges_penalties:
+  demand_charge_usd_kw_month: 12.0    # USD/kW-mes cargo por demanda
+  reactive_penalty_usd_kvar_month: 4.0 # USD/kVAr-mes penalización reactiva
+  voltage_violation_cost_usd_hour: 500.0 # USD/hora violación tensión
+  saidi_cost_usd_minute: 50.0         # USD/minuto interrupción SAIDI
+  low_pf_penalty_threshold: 0.95      # Umbral factor potencia
+
+# =================
+# PARÁMETROS TÉCNICOS DE RED
+# =================
+network_technical:
+  voltage_nominal_kv: 13.2            # Tensión nominal MT
+  base_power_factor: 0.85             # Factor potencia base sistema
+  target_power_factor: 0.95           # Factor potencia objetivo
+  min_voltage_pu: 0.95                # Tensión mínima admisible
+  max_voltage_pu: 1.05                # Tensión máxima admisible
+  technical_loss_rate: 0.08           # 8% pérdidas técnicas base
+  max_line_loading: 0.8               # 80% carga máxima líneas
+  max_transformer_loading: 0.8        # 80% carga máxima trafos
+
+# =================
+# FACTORES DE DEMANDA Y CONSUMO
+# =================
+demand_factors:
+  # Factores de demanda pico (kW/usuario o factor)
+  residential_kw_per_user: 3.5        # kW/usuario residencial
+  commercial_kw_per_kva: 15.0         # kW por kVA transformador
+  industrial_factor: 0.7              # Factor sobre kVA instalado
+  rural_kw_per_user: 2.0              # kW/usuario rural
+  mixed_kw_per_user: 5.0              # kW/usuario mixto
+  
+  # Consumo anual típico (kWh/año)
+  residential_kwh_year: 3000          # kWh/año por usuario
+  commercial_kwh_year: 25000          # kWh/año por transformador
+  industrial_kwh_year: 100000         # kWh/año base industrial
+  rural_kwh_year: 2000                # kWh/año por usuario
+  mixed_kwh_year: 5000                # kWh/año promedio
+
+# =================
+# FACTORES DE PLANTA Y OPERACIÓN
+# =================
+operation_factors:
+  pv_capacity_factor: 0.23            # 2015 MWh/MW/año (23% CF)
+  solar_hours_day: 10                 # Horas efectivas generación solar
+  night_hours_day: 14                 # Horas para compensación reactiva
+  diversity_factor: 0.8               # Factor diversidad demanda
+  coincidence_factor: 0.7             # Factor coincidencia con pico
+  load_factor_min: 0.2                # Factor carga mínimo
+  load_factor_max: 0.8                # Factor carga máximo
+  
+  # Factores de carga por tipo
+  load_factor_residential: 0.35       # FC residencial
+  load_factor_commercial: 0.45        # FC comercial
+  load_factor_industrial: 0.65        # FC industrial
+  load_factor_rural: 0.30             # FC rural
+
+# =================
+# DEGRADACIÓN Y EFICIENCIAS
+# =================
+degradation_efficiency:
+  pv_degradation_annual: 0.005        # 0.5% degradación anual PV
+  bess_degradation_annual: 0.02       # 2% degradación anual BESS
+  bess_roundtrip_efficiency: 0.95     # 95% eficiencia ida-vuelta
+  inverter_efficiency: 0.98           # 98% eficiencia inversor
+  transformer_efficiency: 0.985       # 98.5% eficiencia transformador
+  bess_c_rate: 0.25                   # C/4 rate (4 horas descarga)
+
+# =================
+# SENSIBILIDADES Y FACTORES TÉCNICOS
+# =================
+technical_sensitivities:
+  loss_sensitivity_base: 0.05         # 5% pérdidas base por inyección
+  mvar_to_mw_loss_factor: 0.7         # Factor conversión pérdidas reactivas
+  voltage_sensitivity_kv_mvar: 0.1    # ΔV/ΔQ sensibilidad tensión
+  r_to_z_ratio: 0.8                   # Relación R/Z típica
+  x_to_z_ratio: 0.6                   # Relación X/Z típica
+
+# =================
+# LÍMITES Y RESTRICCIONES OPTIMIZACIÓN
+# =================
+optimization_constraints:
+  pv_min_mw: 0.5                      # PV mínimo por sitio
+  pv_max_ratio: 2.0                   # Máx 2x demanda pico
+  bess_min_hours: 0                   # Puede ser sin BESS
+  bess_max_hours: 4                   # Máx 4 horas almacenamiento
+  q_night_max_ratio: 0.3              # Máx 30% PV para Q nocturno
+  max_injection_ratio: 0.8            # Máx 80% capacidad trafo
+  min_irr: 0.15                       # TIR mínima 15%
+  max_payback: 10                     # Payback máximo 10 años
+  min_bc_ratio: 1.2                   # B/C mínimo 1.2
+
+# =================
+# PARÁMETROS DE OPTIMIZACIÓN
+# =================
+optimization_algorithm:
+  method: differential_evolution       # Algoritmo optimización
+  maxiter: 100                        # Iteraciones máximas
+  popsize: 15                         # Tamaño población
+  tol: 0.01                          # Tolerancia convergencia
+  seed: 42                           # Semilla aleatoria
+  workers: 1                         # Procesos paralelos
+  
+  # Pesos función objetivo
+  npv_weight: 0.7                    # Peso NPV
+  irr_weight: 0.2                    # Peso TIR
+  network_benefit_weight: 0.1        # Peso beneficios red
+
+# =================
+# FACTORES DE CRECIMIENTO
+# =================
+growth_projections:
+  load_growth_rate: 0.03             # 3% crecimiento anual demanda
+  inflation_rate: 0.04               # 4% inflación anual
+  tariff_escalation: 0.05            # 5% escalamiento tarifario

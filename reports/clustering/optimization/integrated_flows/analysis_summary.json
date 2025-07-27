@@ -1,0 +1,21 @@
+{
+  "analysis_date": "2025-07-16T18:56:55.800420",
+  "clusters_analyzed": 5,
+  "total_configurations": 700,
+  "optimal_configurations": 5,
+  "total_optimal_pv_mw": 435.1872,
+  "total_optimal_bess_mwh": 0.0,
+  "total_optimal_q_mvar": 130.55615999999998,
+  "total_optimal_capex_musd": 402.173899008,
+  "total_optimal_npv_musd": 324.46406868844485,
+  "avg_optimal_irr_percent": 17.813636431881964,
+  "avg_optimal_payback_years": 6.8,
+  "total_annual_pv_flow_musd": 89.07066352622626,
+  "total_annual_network_flow_musd": 10.609114289526225,
+  "total_annual_flow_musd": 93.88017262568621,
+  "avg_network_benefit_ratio": 0.10388475318970583,
+  "pv_only_count": 0,
+  "pv_bess_count": 0,
+  "pv_q_count": 5,
+  "full_config_count": 0
+}

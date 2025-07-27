@@ -71,6 +71,35 @@ def create_sidebar():
                 html.I(className="fas fa-chart-line me-2"),
                 "Executive Summary"
             ], href="/executive-summary", active="exact", className="mb-1"),
+            
+            # Nuevas páginas de Fase 3
+            html.Hr(className="my-2"),
+            html.Small("FASE 3 - Optimización", className="text-muted text-uppercase d-block px-3 mb-2"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-cog me-2"),
+                "Configuración"
+            ], href="/optimization-config", active="exact", className="mb-1"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-calculator me-2"),
+                "Análisis de Flujos"
+            ], href="/optimization-analysis", active="exact", className="mb-1"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-balance-scale me-2"),
+                "Comparación"
+            ], href="/optimization-comparison", active="exact", className="mb-1"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-briefcase me-2"),
+                "Portfolio"
+            ], href="/optimization-portfolio", active="exact", className="mb-1"),
+            
+            dbc.NavLink([
+                html.I(className="fas fa-chart-area me-2"),
+                "Sensibilidad"
+            ], href="/optimization-sensitivity", active="exact", className="mb-1"),
         ], vertical=True, pills=True, className="px-3"),
         
         html.Hr(className="my-4"),
@@ -150,7 +179,12 @@ def create_sidebar():
         html.Div([
             html.Small([
                 html.I(className="fas fa-check-circle me-1"),
-                "Fase 0 & 2.5 Completadas"
+                "Fase 0, 1, 2 & 2.5 Completadas"
+            ], className="text-muted"),
+            html.Br(),
+            html.Small([
+                html.I(className="fas fa-spinner fa-spin me-1"),
+                "Fase 3 En Progreso"
             ], className="text-muted"),
             html.Br(),
             html.Small([
