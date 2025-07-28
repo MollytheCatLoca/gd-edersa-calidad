@@ -19,8 +19,13 @@ energy_prices:
 # =================
 # COSTOS DE INVERSIÓN (CAPEX)
 # =================
+# NOTA: El CAPEX PV ahora usa economías de escala:
+# - 1 MW: $850,000/MW
+# - 100+ MW: $637,000/MW  
+# - Entre 1-100 MW: interpolación lineal
+# El valor aquí es para proyectos grandes (100+ MW)
 capex:
-  pv_capex_usd_mw: 800000             # USD/MW solar instalado
+  pv_capex_usd_mw: 637000             # USD/MW solar instalado (100+ MW - economías de escala)
   bess_capex_usd_mwh: 200000          # USD/MWh capacidad batería
   bess_capex_usd_mw: 50000            # USD/MW potencia batería
   statcom_capex_usd_mvar: 40000       # USD/MVAr compensación reactiva
@@ -35,7 +40,7 @@ capex:
 opex:
   pv_opex_rate: 0.01                  # 1% del CAPEX anual
   bess_opex_rate: 0.015               # 1.5% del CAPEX anual
-  statcom_opex_rate: 0.002             # 2% del CAPEX anual
+  statcom_opex_rate: 0.02             # 2% del CAPEX anual (corregido)
 
 # =================
 # PARÁMETROS FINANCIEROS
@@ -50,11 +55,14 @@ financial:
 # CARGOS Y PENALIZACIONES
 # =================
 charges_penalties:
-  demand_charge_usd_kw_month: 12.0    # USD/kW-mes cargo por demanda
-  reactive_penalty_usd_kvar_month: 4.0 # USD/kVAr-mes penalización reactiva
+  demand_charge_usd_kw_month: 0.0     # USD/kW-mes cargo por demanda (DESHABILITADO para calibración)
+  reactive_penalty_usd_kvar_month: 2.91 # USD/kVAr-mes penalización reactiva (CALIBRADO para 40% beneficios)
+  pf_penalty_usd_kvar_month: 2.91      # Alias para compatibilidad (CALIBRADO para 40% beneficios)
   voltage_violation_cost_usd_hour: 500.0 # USD/hora violación tensión
   saidi_cost_usd_minute: 50.0         # USD/minuto interrupción SAIDI
   low_pf_penalty_threshold: 0.95      # Umbral factor potencia
+  energy_not_served_cost: 100.0       # USD/MWh costo energía no suministrada
+  ens_cost_usd_mwh: 100.0            # Alias para ENS
 
 # =================
 # PARÁMETROS TÉCNICOS DE RED
@@ -91,7 +99,7 @@ demand_factors:
 # FACTORES DE PLANTA Y OPERACIÓN
 # =================
 operation_factors:
-  pv_capacity_factor: 0.23            # 2015 MWh/MW/año (23% CF)
+  pv_capacity_factor: 0.211           # 1850 MWh/MW/año (21.1% CF) - CALIBRADO límite máximo
   solar_hours_day: 10                 # Horas efectivas generación solar
   night_hours_day: 14                 # Horas para compensación reactiva
   diversity_factor: 0.8               # Factor diversidad demanda
@@ -120,9 +128,12 @@ degradation_efficiency:
 # SENSIBILIDADES Y FACTORES TÉCNICOS
 # =================
 technical_sensitivities:
-  loss_sensitivity_base: 0.05         # 5% pérdidas base por inyección
+  loss_sensitivity: 0.014             # Sensibilidad pérdidas (ΔLoss/ΔGen) - CALIBRADO para 35% beneficios
+  loss_sensitivity_base: 0.014        # 1.4% pérdidas base por inyección (CALIBRADO)
+  loss_price_multiplier: 1.2          # Pérdidas valen 20% más que energía (sin cambio)
   mvar_to_mw_loss_factor: 0.7         # Factor conversión pérdidas reactivas
   voltage_sensitivity_kv_mvar: 0.1    # ΔV/ΔQ sensibilidad tensión
+  voltage_improvement_pu: 0.02        # Mejora esperada de tensión (2%)
   r_to_z_ratio: 0.8                   # Relación R/Z típica
   x_to_z_ratio: 0.6                   # Relación X/Z típica
 
@@ -163,3 +174,50 @@ growth_projections:
   load_growth_rate: 0.03             # 3% crecimiento anual demanda
   inflation_rate: 0.04               # 4% inflación anual
   tariff_escalation: 0.05            # 5% escalamiento tarifario
+
+# =================
+# PARÁMETROS DE BENEFICIOS DE RED
+# =================
+network_benefits_params:
+  base_losses_mw: 2.0                # Pérdidas base del sistema (MW)
+  violation_hours_year: 100          # Horas de violación de tensión por año (REDUCIDO para calibración)
+  saidi_minutes: 120                 # SAIDI base (minutos/año)
+  saidi_reduction_minutes: 50        # Reducción SAIDI con GD+BESS (CALIBRADO para 25% beneficios)
+  saidi_improvement_factor: 0.42     # Factor mejora SAIDI (50/120) - CALIBRADO
+  users_affected: 5000               # Usuarios típicos afectados
+  coincidence_factor: 0.7            # Factor de coincidencia con pico
+  upgrade_cost_usd_mw: 100000        # Costo de ampliación por MW
+  deferral_years: 5                  # Años de diferimiento típico
+  include_deferral: true             # Incluir beneficio de diferimiento
+  energy_cost_upstream_usd_mwh: 90   # Costo pérdidas = 75 * 1.2 (CALIBRADO)
+
+# =================
+# FACTORES DE NECESIDAD DE RED
+# =================
+# Factor que refleja qué tanto necesita la red el proyecto GD
+# 0.0 = Red robusta sin problemas (solo beneficios PV)
+# 1.0 = Red crítica con problemas severos (todos los beneficios)
+network_need_factors:
+  # Por tipo de zona
+  zone_urban_high_quality: 0.25      # Zonas urbanas con buena calidad
+  zone_suburban_medium: 0.50         # Zonas suburbanas con calidad media
+  zone_rural_critical: 1.00          # Zonas rurales con problemas críticos
+  zone_industrial: 0.75              # Zonas industriales
+  
+  # Por indicadores de calidad
+  quality_excellent: 0.0             # Sin violaciones ni problemas
+  quality_good: 0.25                 # Problemas esporádicos
+  quality_regular: 0.50              # Problemas frecuentes
+  quality_poor: 0.75                 # Problemas severos
+  quality_critical: 1.00             # Situación crítica
+  
+  # Factores de ajuste por criterio
+  voltage_violation_threshold: 0.95   # Umbral violación tensión (pu)
+  loss_rate_threshold: 0.08          # Umbral pérdidas técnicas
+  saidi_threshold: 120               # Umbral SAIDI (minutos/año)
+  
+  # Pesos para cálculo compuesto
+  weight_voltage: 0.35               # Peso problemas de tensión
+  weight_losses: 0.25                # Peso pérdidas técnicas
+  weight_reliability: 0.25           # Peso confiabilidad (SAIDI)
+  weight_reactive: 0.15              # Peso problemas de reactiva
