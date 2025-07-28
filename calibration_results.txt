@@ -1,0 +1,11 @@
+PARÁMETROS CALIBRADOS PARA BENEFICIOS DE RED
+==================================================
+
+pf_penalty_usd_kvar_month: 4.26
+loss_sensitivity: 0.020
+saidi_reduction_minutes: 383.3
+
+Estos valores logran:
+- Payback sin red: 6.0 años
+- Payback con red: 4.8 años
+- Distribución: Q(40%), Losses(35%), Reliability(25%)
