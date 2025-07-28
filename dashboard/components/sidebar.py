@@ -100,6 +100,7 @@ def create_sidebar():
                 html.I(className="fas fa-chart-area me-2"),
                 "Sensibilidad"
             ], href="/optimization-sensitivity", active="exact", className="mb-1"),
+            
         ], vertical=True, pills=True, className="px-3"),
         
         html.Hr(className="my-4"),

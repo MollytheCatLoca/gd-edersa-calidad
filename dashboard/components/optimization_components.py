@@ -109,7 +109,7 @@ def create_form_group(label, input_component, help_text="", icon=None):
     if icon:
         label_content = [html.I(className=f"{icon} me-2"), label]
     
-    return dbc.FormGroup([
+    return html.Div([
         dbc.Label(label_content, className="fw-bold text-secondary"),
         input_component,
         dbc.FormText(help_text) if help_text else None
